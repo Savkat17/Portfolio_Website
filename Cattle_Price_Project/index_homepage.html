@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Cattle Price Analysis</title>
+    <link rel="stylesheet" href="style_homepage.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1> Livestock Price Prediction for Data-driven Decision Making </h1>
+        <p>Natural cycles | Python | Price dynamics</p>
+    </header>
+
+
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <img 
+        src="homepage cattleLeft.jpg"
+        class="hero-image left-image">
+        <section class="hero">
+            <h2>
+                Forecasting livestock prices for financial planning and optimisation.
+            </h2>
+            <p>
+                A Python application that predicts future livestock prices based on 
+                historic livestock prices, agroclimatic patterns like rainfall, temprature etc. 
+                and economic indicators.
+            </p>
+            <a href="password.html" class="button">
+                View Source Code
+            </a>        
+        </section>
+        <img 
+        src="homepage cattleRight.jpg"
+        class="hero-image right-image">
+    </div>
+
+    <!-- Background-->
+     <section>
+        <h2>Background</h2>
+        <p>
+            Livestock price forecasting relies on analysing historical sales 
+            data, feed costs, seasonal cycles, and supply metrics to predict 
+            future market trends. Producers and analysts leverage traditional 
+            statistical models and AI-driven systems to navigate price fluctuations 
+            caused by supply shortages or shifts in regional demand.
+        </p>
+            <h3>Key Forecasting Models</h3>
+            <p>
+                Advanced AI models like machine learning and neural networks analyse
+                non-linear relationships—such as animal breed, weight, seasonality, 
+                and local market sentiment—to generate highly accurate, per-head or 
+                per-pound predictions. Traditional statistical time-series models 
+                (AR & ARIMA) analyse past price series and seasonal components 
+                (e.g., price shifts around religious holidays or seasonal herd turnoff 
+                periods) to project future prices.
+            </p>
+            <h3>Factors Driving Price Volatility</h3>
+            <p>
+                The number of animals (herd supply) moving through auctions or feedlots 
+                directly dictates short-term price pressure. The input costs such as price 
+                of grain, forage, and other inputs heavily influences breakeven points and 
+                future livestock placement rates. Unpredictable factors like regional drought, 
+                flooding, or livestock disease outbreaks significantly disrupt supply and cause 
+                volatile price swings.
+            </p>
+        <p>
+        </p>
+     </section>
+
+    <!-- Problem -->
+    <section>
+        <h2>The Problem</h2>
+        <p>
+            The fluctuating livestock prices poses a significant challenge to farmers by creating 
+            financial uncertainty and limiting their ability to identify optimal buying and selling 
+            opportunities. As a result, farm profitability and production planning are adversely affected.
+        </p>
+    </section>
+
+
+    <!-- Solution -->
+    <section>
+        <h2>The Solution</h2>
+        <p>
+            This project analyses various data patterns used to predict livestock prices using time series 
+            modelling in Python, using those forecast prices to see what the financial implications
+            can be in mitigating pricing strategies for financial instruments.  
+        </p>
+    </section>
+
+
+    <!-- Workflow -->
+    <section>
+        <h2>Workflow</h2>
+        <p>
+            Data extraction from various sources → Data preparation → Data pattern analysis → Building model
+            data → Model training → Model Checks → Price forecasting → Planning mitigating strategies for 
+            favourable and unfavourable prices.
+        </p>
+    </section>
+
+    <!-- Data -->
+    <section id="data-types">
+        <h2>Data</h2>
+            <a href="index/historic livestock prices index.html">
+                <button type="button">Historic livestock prices</button>
+            </a>
+            <a href="index/rainfall index.html">
+                <button type="button">Rainfall</button>
+            </a>
+            <a href="index/grain prices index.html">
+                <button type="button">Commodity prices</button>
+            </a>
+            <a href="index/fuel prices index.html">
+                <button type="button">Fuel prices</button>
+            </a>
+            <a href="index/vegetation index.html">
+                <button type="button">Vegetation index</button>
+            </a>
+    </section>
+
+    <section id="modelling-insights">
+        <h2>Insight into the Modelling Process (more technical)</h2>
+        <p> 
+            Developing a time series forecasting model for cattle prices involved an extensive data preparation and modelling process.
+            Various potential exogenous factors, including weather conditions and vegetation indices, were investigated to identify 
+            relationships with cattle price movements and determine the most informative lagged variables. Selecting appropriate lag 
+            structures was an important step in capturing delayed effects that environmental and market factors may have on livestock 
+            prices. 
+        </p>
+        <p> 
+            Considerable attention was also given to preparing and refining the datasets to ensure they were suitable for modelling. 
+            This included handling missing observations caused by events such as disease outbreaks and periods when auction facilities 
+            were closed over holiday periods, particularly around New Year. These data processing steps were essential to create a 
+            consistent time series dataset and improve the reliability of the forecasting models. 
+        </p>  
+        <a href="index/modelling insights index.html">
+            <button type="button">View Insights</button>
+        </a>
+  
+    </section>
+
+    <!-- Update on current forecasts -->
+     <section>
+        <h2>Current Forecasts</h2>
+        <h3>Livestock category: Cattle - Tollies_max200kg</h3>
+        <img src="images/Data/SARIMAX_forecast_backup.jpg">
+     </section>
+
+    <!-- Future Work -->
+    <section>
+        <h2>Future Improvements</h2>
+        <ul>
+            <li>Expanding project to cover other types of livestock prices for a broad farming livestock price planning</li>
+            <li>Model refinements</li>
+            <li>More mitigating price strategies</li>
+            <li>Upgrade program for real-time price analysis</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>
+            © 2024 Savannah Erasmus
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
