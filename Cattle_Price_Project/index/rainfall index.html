@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+                    content="width=device-width, initial-scale=1.0">
+        <title>Rainfall Data</title>
+        <link rel="stylesheet" href="../styles/rainfall style.css">
+    </head>
+
+    <body>
+        <!-- Header -->
+         <header>
+            <h1>Rainfall Data</h1>
+            <p>
+                Historic data | Seasonal patterns | Correlation trends
+            </p>
+            <p>  </p>
+            <a href="../index.html#data-types"> <button> Home </button></a>
+         </header>
+
+        <section> 
+            <h2>X CHIRPS Rainfall Dataset</h2>
+            <p>
+                Rainfall was incorporated into the cattle price forecasting model as an exogenous variable to capture the 
+                influence of climatic conditions on livestock production. The rainfall data were obtained from the Climate 
+                Hazards Group InfraRed Precipitation with Station data (CHIRPS) dataset, which is available through Google 
+                Earth Engine (GEE).
+            </p>
+            <p>
+                CHIRPS is a high-resolution quasi-global rainfall product developed by the Climate Hazards Center (CHC) at 
+                the University of California, Santa Barbara (UCSB). The dataset combines satellite-derived infrared precipitation 
+                estimates with observations from thousands of ground-based weather stations to produce accurate gridded rainfall 
+                estimates. By blending satellite imagery with station measurements, CHIRPS provides improved spatial coverage in 
+                regions where weather station networks are sparse while maintaining consistency with observed rainfall measurements.
+            </p>
+            <p>
+                The CHIRPS Version 2.0 dataset provides:
+            </p>
+            <ul>
+                <li>Characteristic	Description</li>
+                <li>Producer	Climate Hazards Center (CHC), UCSB</li>
+                <li>Spatial resolution	0.05° (~5 km)</li>
+                <li>Temporal coverage	1981 – Present</li>
+                <li>Temporal resolution	Daily, Pentadal (5-day), and Monthly</li>
+                <li>Coverage	Quasi-global (50°S–50°N for v2 products)</li>
+                <li>Rainfall units	Millimetres (mm)</li>
+            </ul>
+            <p>
+                The relatively fine spatial resolution and long historical record make CHIRPS particularly suitable for agricultural, 
+                hydrological, drought monitoring, and climate-related studies where consistent rainfall observations are required. 
+            </p>
+
+            <h2>Google Earth Engine</h2>
+            <p>
+                Google Earth Engine is a cloud-based geospatial processing platform that provides access to a large catalogue of 
+                remotely sensed datasets together with high-performance computational resources. Instead of downloading large raster 
+                datasets locally, Earth Engine allows users to perform spatial and temporal analyses directly on Google's cloud 
+                infrastructure before exporting only the processed results.
+            </p>
+            <p>
+                For this study, Earth Engine was used because it:
+            </p>
+            <ul>
+                <li>hosts the complete CHIRPS rainfall archive;</li>
+                <li>performs filtering and processing on Google's servers;</li>
+                <li>efficiently processes multiple years of rainfall observations;</li>
+                <li>enables automated extraction over multiple regions simultaneously; and</li>
+                <li>exports processed datasets directly as CSV files.</li>
+            </ul>
+            <p>
+                Using GEE significantly reduced both storage requirements and computational time compared with downloading and 
+                processing thousands of individual raster files locally.
+            </p>
+
+            <h2>Rainfall Data Extraction Methodology</h2>
+            <p>
+                Rainfall data were extracted dynamically from Google Earth Engine using a custom JavaScript script developed for this
+                study. Rather than downloading rainfall rasters manually, the script automated the entire extraction process. The extraction 
+                procedure consisted of the following steps:
+            </p>
+            <h3>Step 1: Define study areas</h3>
+            <p>
+                The four South African provinces included in the analysis (Limpopo, Mpumalanga, Gauteng and North West) were imported
+                into Google Earth Engine as polygon shapefiles defining the regions of interest.
+            </p>
+            <h3>Step 2: Generate sampling locations</h3>
+            <p>
+                For each province, random sampling points were generated across the study area. These points represented locations 
+                at which rainfall values would be extracted throughout the study period. Random spatial sampling ensured that rainfall
+                variability across each province was adequately represented while maintaining manageable computational requirements. There
+                were 200 random sampling points chosen. Shown in the image below:
+            </p>
+            <img src="../images/Data/Limpopo_KNN.png">
+            <img src="../images/Data/Gauteng_KNN.png">
+            <img src="../images/Data/Mpumalanga_KNN.png">
+            <img src="../images/Data/NorthWest_KNN.png">
+            <h3>Step 3: Load the CHIRPS rainfall collection</h3>
+            <p>
+                The CHIRPS ImageCollection was loaded into Google Earth Engine and filtered according to the required study period
+                (2020–2025). Only the precipitation band was retained for subsequent processing.
+            </p>
+            <h3>Step 4: Extract rainfall values</h3>
+            <p>For each rainfall image:</p>
+            <ul>
+                <li>rainfall was sampled at every random point,</li>
+                <li>the rainfall amount (mm) was recorded,</li>
+                <li>the image acquisition date was attached to every observation,</li>
+                <li>province and sampling-point identifiers were retained.</li>
+            </ul>
+            <p>This produced a continuous rainfall time series for every sampled location.</p>
+            <h3>Step 5: Aggregate rainfall observations</h3>
+            <p>
+                Individual point observations were subsequently aggregated according to the predefined rainfall clusters 
+                (KNN groups). Average rainfall was calculated for each cluster and week, producing representative rainfall 
+                measurements that aligned with the temporal structure of the livestock price dataset.
+            </p>
+            <h3>Step 6: Export results</h3>
+            <p>
+                The processed rainfall tables were exported directly from Google Earth Engine as CSV files. Each exported record 
+                contained information such as:
+            </p>
+            <ul>
+                <li>Province</li>
+                <li>KNN rainfall region</li>
+                <li>Year</li>
+                <li>Week</li>
+                <li>Date</li>
+                <li>Average rainfall (mm)</li>
+            </ul>
+            <p>
+                These CSV files were subsequently imported into Python, where they were merged with the weekly cattle price data 
+                and transformed into additional explanatory variables, including one-year and two-year rainfall lag variables used 
+                in the forecasting models.
+            </p>
+        </section>
+
+        <section>
+            <h2>Why CHIRPS was selected</h2>
+            <p>The CHIRPS dataset was selected for this study because it offers several advantages over relying solely on ground weather stations:</p>
+            <ul>
+                <li>High spatial resolution (~5 km).</li>
+                <li>Long historical record beginning in 1981.</li>
+                <li>Continuous coverage over the entire study area.</li>
+                <li>Combines satellite observations with rain-gauge measurements, improving accuracy.</li>
+                <li>Freely accessible through Google Earth Engine.</li>
+                <li>Well established in agricultural, drought monitoring and climate-impact research.</li>
+            </ul>
+        </section>
+
+         <section>
+            <h2> Historic data according to province</h2>
+            <h3>Limpopo</h3>
+            <img src="../images/Data/Limpopo_rainfall.png">
+            <h3>Gauteng</h3>
+            <img src="../images/Data/Gauteng_rainfall.png">
+            <h3>Mpumalanga</h3>
+            <img src="../images/Data/Mpumalanga_rainfall.png">
+            <h3>North West</h3>
+            <img src="../images/Data/NorthWest_rainfall.png">
+
+            <p>
+                Looking across the four provincial regions, the GIF illustrates the rainfall measurements recorded at the 200 randomly
+                sampled points within each province. The blue markers represent the sampled locations, with larger markers indicating
+                higher rainfall amounts (mm) and smaller markers indicating lower rainfall amounts. As the animation progresses through
+                time, the variation in marker size highlights the spatial and temporal changes in rainfall across the study regions.
+            </p>
+            <img src="../images/Data/rainfall_over_time.gif" alt="Rainfall GIF">
+         </section>
+    </body>
+</html>
