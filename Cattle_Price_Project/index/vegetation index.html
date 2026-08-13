@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+                    content="width=device-width, initial-scale=1.0">
+        <title>Vegetation Index Data</title>
+        <link rel="stylesheet" href="../styles/vegetation style.css">
+    </head>
+
+    <body>
+        <!-- Header -->
+         <header>
+            <h1>Vegetation Index</h1>
+            <p>
+                Historic data | Seasonal patterns | Correlation trends
+            </p>
+            <p>  </p>
+            <a href="../index.html#data-types"> <button> Home </button></a>
+         </header>
+
+         <section>
+            <h2>Vegetation Index (NDVI) Data</h2>
+            <p>
+                Vegetation condition was incorporated into the analysis through the use of the **Normalized Difference Vegetation 
+                Index (NDVI)**, a remote sensing indicator commonly used to measure vegetation health, density, and photosynthetic 
+                activity. NDVI provides an indirect measure of vegetation productivity by analysing the difference between red and 
+                near-infrared light reflected by vegetation. Healthy green vegetation strongly reflects near-infrared wavelengths 
+                while absorbing red wavelengths, resulting in higher NDVI values. Lower NDVI values generally indicate sparse 
+                vegetation, degraded vegetation conditions, or areas with limited plant growth.
+            </p>
+            <p>
+                NDVI data were obtained through **Google Earth Engine (GEE)**, a cloud-based geospatial analysis platform that 
+                provides access to extensive satellite imagery collections and computational resources. The use of Google Earth 
+                Engine allowed vegetation information to be extracted efficiently over large geographic regions and multiple years 
+                without requiring the manual download and processing of large satellite image datasets.
+            </p>
+            <p>
+                For this study, satellite-derived vegetation data were retrieved from the **Moderate Resolution Imaging Spectroradiometer 
+                (MODIS)** satellite product available within the Google Earth Engine catalogue. MODIS was selected due to its consistent 
+                global coverage, long historical record, and suitability for monitoring vegetation dynamics at regional scales. The dataset 
+                provides regular observations of vegetation conditions, allowing seasonal and annual changes in vegetation productivity to be 
+                analysed.
+            </p>
+            <p>
+                The NDVI extraction process was automated within Google Earth Engine using a custom script. The process consisted of 
+                defining the study regions, filtering the satellite image collection according to the required time period, calculating 
+                vegetation indices, and extracting spatially representative NDVI measurements.
+            </p>
+            <p>
+                The extraction methodology consisted of the following steps:
+            </p>
+            <ul>
+                <li>Define study regions -- The study area was defined using the provincial boundaries of Limpopo, Gauteng, Mpumalanga, and North West, 
+                    corresponding to the regions used for the cattle price and rainfall analyses.</li>
+                <li>Access satellite imagery -- The MODIS satellite image collection was filtered according to the study period 
+                    (2020-2025), and the required vegetation index band was selected.</li>
+                <li>Generate spatial sampling regions -- A spatial grid was created across the study area to ensure consistent 
+                    sampling of vegetation conditions across different geographical locations.</li>
+                <li>Extract NDVI values -- NDVI values were extracted from each satellite observation and associated with their 
+                    corresponding location and observation date.</li>
+                <li>Aggregate and export results -- The extracted NDVI observations were aggregated according to the predefined 
+                    spatial regions and temporal periods before being exported from Google Earth Engine as CSV files.</li>
+            </ul>
+            <p>
+                The resulting dataset contained information such as province, spatial group identifier, year, week, date, and NDVI 
+                values. These data were subsequently processed in Python, where they were aligned with the weekly cattle price dataset 
+                and rainfall variables.
+            </p>
+            <p>
+                NDVI provides valuable information for livestock production systems because vegetation availability directly influences 
+                grazing conditions, pasture quality, and carrying capacity. During periods of favourable rainfall, vegetation productivity 
+                typically increases, resulting in improved grazing availability and potentially influencing livestock production decisions. 
+                Conversely, reduced vegetation productivity may indicate drought stress, reduced forage availability, and increased production 
+                pressure.
+            </p>
+         </section>
+
+         <section>
+            <h2>Historic Vegetation index data</h2>
+            <p>
+                The historical vegetation trends are presented below to illustrate seasonal changes in vegetation conditions across 
+                the study regions.
+            </p>
+            <img src="../images/Data/Vegetation_NDVI.gif">
+         </section>
+    </body>
+</html>
