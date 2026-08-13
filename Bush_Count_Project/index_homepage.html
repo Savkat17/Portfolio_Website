@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Bush Counting from Aerial Imagery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🌳 Bush Counting using Drone Imagery 🌳</h1>
+        <p>
+            Computer Vision | Python | Image Processing
+        </p>
+    </header>
+
+
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <img 
+        src="images/drone1.jpeg"
+        class="hero-image left-image">
+        <section class="hero">
+            <h2>
+                Automatically identifying and counting bushes
+                from aerial imagery.
+            </h2>
+            <p>
+                A Python application that classifies vegetation
+                pixels, detects individual bushes, and estimates
+                bush density for agricultural monitoring.
+            </p>
+            <!-- <button>
+                View Source Code
+            </button> -->
+        </section>
+        <img 
+        src="images/drone2.jpeg"
+        class="hero-image right-image">
+    </div>
+
+    <!-- Background-->
+     <section>
+        <h2>Background</h2>
+        <p>
+            Bush counting is used in the agricultural sector to 
+            measure crop yields, establish planting rates and
+            managing rangelands where invasive woody vegetation
+            threatens livestock grazing, Counting allows farmers 
+            or other agricultural users to track plant health,
+            determine chemical/water requirements and calculate
+            the profitability of their land.
+        </p>
+            <h3>Rangeland and Pasture Management</h3>
+            <p>
+                In semi-arid savannas (such as South Africa, Namibia 
+                and Botswana), aggresive woody shrubs and trees frequently
+                crowd out the palatable grasses livestock need. Farmers 
+                count bushes to evaluate the grass-to-bush ratio. High bush
+                counts decrease grazing capacity and lead to soil degredation. 
+                Knowing the exact density and species of encroaching bushes
+                helps farmers apply targeted selective mechanical or chemical 
+                control, or utilise prescribed burning. Farmers frequently 
+                assess and quantify bush densities to plan lucrative de-bushing 
+                projects, which yield products like charcoal, animal fodder
+                or wood chips.
+            </p>
+            <h3>Crop Yield Estimation</h3>
+            <p>
+                For perennial crops, bush counting is a staple metric for predicting
+                seasonal output. Counting bushes or specific plucking points directly 
+                informs overall production forecasts. In tea plantations, for instance,
+                counting tea bushes helps assess planting viability and compares the effectiveness
+                of different agroforestry methods. Modern precision agriculture frequently 
+                uses smart drones to conduct automated bush counts and map canopy health.
+            </p>
+            <h3>Crop Establishment and Density</h3>
+            <p>
+                For direct-sown or seedling-based agriculture, counting is done to evaluate
+                the performance od seeders and overall plant establishment. Early plant counts
+                determine the success rate of germination and identify blockages or 
+                malfunctions in the seed drill. It verifies if the field has reached the ideal
+                plant population per square meter needed to maximise yield.
+            </p>
+        <p>
+        </p>
+     </section>
+
+    <!-- Problem -->
+    <section>
+        <h2>The Problem</h2>
+        <p>
+            Bush encroachment reduces grazing capacity and
+            makes it difficult for farmers to estimate
+            vegetation density manually.
+        </p>
+    </section>
+
+
+    <!-- Solution -->
+    <section>
+        <h2>The Solution</h2>
+        <p>
+            This project analyses aerial imagery using Python,
+            classifies vegetation pixels based on colour,
+            groups neighbouring pixels into bushes, and
+            estimates the total number of bushes.
+        </p>
+    </section>
+
+
+    <!-- Workflow -->
+    <section>
+        <h2>Workflow</h2>
+        <p>
+            Image → Pixel Classification → Bush Detection → Bush Counting → Statistics
+        </p>
+    </section>
+
+        <!-- Image transformation -->
+    <section class="pipeline">
+        <h2>
+            Image Processing Pipeline
+        </h2>
+        <p>
+            The aerial image is transformed through multiple
+            computer vision steps to identify and count individual bushes.
+        </p>
+        <div class="pipeline-grid">
+            <div class="pipeline-item">
+                <img src="images/Bushes3.png">
+                <h3>Original Image</h3>
+            </div>
+            <div class="pipeline-arrow">
+                →
+            </div>
+            <div class="pipeline-item">
+                <img src="images/Bushes3_pixelled.png">
+                <h3>Pixel Classification</h3>
+            </div>
+            <div class="pipeline-arrow">
+                →
+            </div>
+            <div class="pipeline-item">
+                <img src="images/Bushes3_counted.png">
+                <h3>Bush Detection</h3>
+            </div>
+            <div class="pipeline-arrow">
+                →
+            </div>
+            <div class="pipeline-item">
+                <img src="images/Bushes3_mask.png">
+                <h3>Binary Mask</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Work -->
+    <section>
+        <h2>Future Improvements</h2>
+        <ul>
+            <li>Drone imagery resolution</li>
+            <li>Deep Learning & Mask R-CNN</li>
+            <li>Automatic GIS integration</li>
+            <li>Destinguishing between various plant species using different sensor methods</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>
+            © 2026 Savannah Erasmus
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
