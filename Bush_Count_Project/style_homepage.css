@@ -1,7 +1,8 @@
 /* =========================================================
    BUSH COUNTING PROJECT
    Responsive CSS
-   Same structure and formatting as Cattle Project
+   Same structure as Cattle Project
+   Original Bush Counting colours preserved
 ========================================================= */
 
 
@@ -19,6 +20,7 @@
     --secondary: #2d6a4f;
     --accent: #5d8c51;
 
+    /* Original dark green used in header */
     --header-dark: #245c3d;
 
     --background: #f6f8f5;
@@ -27,11 +29,11 @@
     --text-dark: #333333;
     --text-light: #666666;
 
-    --shadow: rgba(0,0,0,0.08);
+    --shadow: rgba(0, 0, 0, 0.08);
 
 
     /* ===========================
-       Page / Layout
+       Page Layout
     =========================== */
 
     --page-width: 1100px;
@@ -40,35 +42,24 @@
     --section-margin: 40px;
     --section-padding: 20px;
 
-    --content-gap: 40px;
-
-
-    /* ===========================
-       Spacing
-    =========================== */
-
-    --spacing-small: 10px;
-    --spacing-medium: 20px;
-    --spacing-large: 40px;
-
 
     /* ===========================
        Typography
     =========================== */
 
     --font-family:
-        Arial, Helvetica, sans-serif;
+        Arial,
+        Helvetica,
+        sans-serif;
 
     --body-font-size: 18px;
 
     --header-title-size: 48px;
-
     --header-text-size: 20px;
 
     --section-title-size: 32px;
 
     --hero-title-size: 38px;
-
     --hero-text-size: 20px;
 
     --line-height: 1.8;
@@ -79,12 +70,9 @@
     =========================== */
 
     --section-radius: 20px;
-
-    --button-radius: 10px;
-
-    --round-button-radius: 40px;
-
     --hero-radius: 20px;
+    --button-radius: 10px;
+    --round-button-radius: 40px;
 
 
     /* ===========================
@@ -99,22 +87,7 @@
        Hero
     =========================== */
 
-    --hero-width: 900px;
-
-    --hero-padding: 50px;
-
     --hero-min-height: 350px;
-
-
-    /* ===========================
-       Hero Images
-    =========================== */
-
-    --hero-left-width: 25%;
-
-    --hero-center-width: 50%;
-
-    --hero-right-width: 25%;
 
 }
 
@@ -151,7 +124,7 @@ body {
 
 /* =========================================================
    HEADER
-   Same structure as Cattle Project
+   ORIGINAL BUSH COUNTING STYLE
 ========================================================= */
 
 header {
@@ -159,16 +132,15 @@ header {
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--secondary),
-            var(--accent)
+            #245c3d,
+            #5d8c51
         );
 
     color: white;
 
     text-align: center;
 
-    padding: 80px 20px;
+    padding: 50px 10px;
 }
 
 
@@ -210,7 +182,7 @@ header .button {
 
     transition: 0.3s ease;
 
-    margin-top: var(--spacing-medium);
+    margin-top: 20px;
 }
 
 
@@ -223,17 +195,41 @@ header .button:hover {
 
 
 /* =========================================================
-   HERO
+   HERO WRAPPER
 ========================================================= */
+
+/*
+    IMPORTANT:
+
+    The HTML is:
+
+    <div class="hero-wrapper">
+
+        <img class="hero-image left-image">
+
+        <section class="hero">
+            ...
+        </section>
+
+        <img class="hero-image right-image">
+
+    </div>
+
+    Therefore the grid is:
+
+    25% | 50% | 25%
+
+    IMAGE | HERO | IMAGE
+*/
 
 .hero-wrapper {
 
     display: grid;
 
     grid-template-columns:
-        var(--hero-left-width)
-        var(--hero-center-width)
-        var(--hero-right-width);
+        25%
+        50%
+        25%;
 
     align-items: stretch;
 
@@ -249,7 +245,7 @@ header .button:hover {
    HERO IMAGES
 ========================================================= */
 
-.hero-image {
+.hero-wrapper .hero-image {
 
     width: 100%;
 
@@ -265,17 +261,13 @@ header .button:hover {
    CENTRE HERO
 ========================================================= */
 
-.hero {
-
-    max-width: var(--hero-width);
-
-    margin: auto;
+.hero-wrapper .hero {
 
     background: var(--card-background);
 
     border-radius: var(--hero-radius);
 
-    padding: var(--hero-padding);
+    padding: 50px;
 
     display: flex;
 
@@ -289,16 +281,20 @@ header .button:hover {
 
     box-shadow:
         0px 10px 25px var(--shadow);
+
+    width: 100%;
+
+    margin: 0;
 }
 
 
 .hero h2 {
 
+    color: var(--header-dark);
+
     font-size: var(--hero-title-size);
 
     margin-bottom: 20px;
-
-    color: var(--header-dark);
 }
 
 
@@ -313,7 +309,7 @@ header .button:hover {
 
 
 /* =========================================================
-   LINK BUTTON
+   BUTTON
 ========================================================= */
 
 .button {
@@ -378,7 +374,6 @@ button:hover {
 
 /* =========================================================
    CONTENT SECTIONS
-   Same "window" structure as Cattle Project
 ========================================================= */
 
 section {
@@ -413,6 +408,8 @@ section h2 {
 
 section h3 {
 
+    color: var(--header-dark);
+
     margin-top: 20px;
 
     margin-bottom: 10px;
@@ -442,20 +439,6 @@ ul {
 li {
 
     margin-bottom: 12px;
-}
-
-
-section img {
-
-    display: block;
-
-    width: 95%;
-
-    height: auto;
-
-    margin: 0 auto;
-
-    max-width: 100%;
 }
 
 
@@ -546,11 +529,10 @@ footer {
 
 
 /* =========================================================
-   TABLET RESPONSIVENESS
+   TABLET
 ========================================================= */
 
 @media (max-width: 768px) {
-
 
     /* ===========================
        Header
@@ -568,14 +550,8 @@ footer {
     }
 
 
-    header p {
-
-        font-size: 18px;
-    }
-
-
     /* ===========================
-       Sections
+       Content Sections
     =========================== */
 
     section {
@@ -607,9 +583,11 @@ footer {
     }
 
 
-    .hero {
+    .hero-wrapper .hero {
 
-        padding: 35px 20px;
+        padding: 30px 20px;
+
+        width: 100%;
     }
 
 
@@ -651,23 +629,14 @@ footer {
         display: none;
     }
 
-
-    .pipeline-item img {
-
-        width: 100%;
-
-        max-width: 220px;
-    }
-
 }
 
 
 /* =========================================================
-   PHONE RESPONSIVENESS
+   PHONE
 ========================================================= */
 
 @media (max-width: 480px) {
-
 
     /* ===========================
        General
@@ -784,7 +753,7 @@ footer {
     }
 
 
-    .hero {
+    .hero-wrapper .hero {
 
         padding: 25px 12px;
 
@@ -813,10 +782,10 @@ footer {
 
 
     /* ===========================
-       HERO IMAGES
+       Hero Images
     =========================== */
 
-    .hero-image {
+    .hero-wrapper .hero-image {
 
         width: 100%;
 
