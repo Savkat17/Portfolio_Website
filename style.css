@@ -1,252 +1,374 @@
-/* ===========================
-   Theme Colours
-=========================== */
-:root {
-
-    --primary: #2e6e8f;
-    --secondary: #299ed8;
-    --accent: #71b8dc;
-
-    --background: #f6f8f5;
-    --card-background: #ffffff;
-
-    --text-dark: #333333;
-    --text-light: #666666;
-
-    --shadow: rgba(0,0,0,0.08);
-
-}
-
-html {
-    scroll-behavior: smooth;
-}
-/* ===========================
-   General Page Styling
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--background);
-    color: var(--text-dark);
-    line-height: 1.8;
-}
-
-/* ===========================
-   Header
-=========================== */
-header {
-    background: linear-gradient(135deg, var(--primary),
-        var(--secondary),
-        var(--accent));
-    color: white;
-    text-align: left;
-    padding: 80px 20px;
-}
-header h1{
-    font-size:48px;
-    margin-bottom:15px;
-}
-header p{
-    font-size:20px;
-    opacity:0.9;
-}
-
-#contact{
-    padding:60px 10%;
-}
-
-.contact-container{
-    display:grid;
-    grid-template-columns: 1fr 2fr;
-    gap:40px;
-    align-items:center;
-}
-
-.contact-left{
-    text-align:center;
-}
-
-.contact-left img{
-    width:220px;
-    border-radius:8px;
-}
-
-.contact-right p{
-    margin:12px 0;
-    font-size:1.1rem;
-}
-
-/* ===========================
-   Hero
-=========================== */
-.hero{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    padding:70px 30px;
-}
-.hero h2{
-    font-size:38px;
-    margin-bottom:20px;
-}
-.hero p{
-    font-size:20px;
-    color:var(--text-light);
-    margin-bottom:40px;
-}
-.button {
-    display: inline-block;
-    background: var(--secondary);
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-.button:hover {
-    background: var(--primary);
-    transform: translateY(-2px);
-}
-
-/* ===========================
-   Button
-=========================== */
-button{
-    background:var(--secondary);
-    color:white;
-    border:none;
-    padding:16px 35px;
-    border-radius:40px;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
-    margin-bottom:10px;
-}
-button:hover{
-    background:var(--primary);
-    transform:translateY(-3px);
-}
-
-/* ===========================
-   Content Sections
-=========================== */
-section{
-    background:var(--card-background);
-    width: 90%;
-    margin:40px auto;
-    padding:20px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 25px var(--shadow);
-    box-sizing: border-box;
-}
-section h1{
-    color:var(--primary);
-    margin-bottom:20px;
-    font-size:32px;
-}
-
-section h2{
-    color:var(--secondary);
-    margin-top:10px;
-    margin-bottom:10px;
-    font-size:25px;
-}
-section p{
-    font-size:18px;
-    margin-bottom: 15px;
-}
-ul{
-    padding-left:25px;
-    font-size:18px;
-}
-li{
-    margin-bottom:12px;
-}
-section img{
-    display: block;
-    margin: 0 auto;
-}
-
-#skills{
-    padding:60px 10%;
-    text-align:center;
-}
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:20px;
-    margin-top:30px;
-}
-
-.skill-card{
-    background:#fff;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    font-size:1.1rem;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.skill-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* ===========================
-   Footer
-=========================== */
-footer{
-    text-align:center;
-    padding:40px;
-    color:var(--text-light);
-}
-
-/* ===========================
-   Hero with side images
-=========================== */
-.hero-wrapper{
-    display:grid;
-    grid-template-columns: 25% 50% 25%;
-    align-items:stretch;
-    width: 100%;
-    margin:40px auto;
-    min-height: 350px;
-}
-.hero-image-container {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-}
-.hero-image {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-.hero {
-    background:var(--card-background);
-    border-radius:20px;
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    box-shadow:
-        0px 10px 25px var(--shadow);
-}
-.hero h2 {
-    font-size:38px;
-    margin-bottom:20px;
-}
-.hero p {
-    font-size:20px;
-    color:var(--text-dark);
+/* ========================================================= PORTFOLIO WEBSITE - GLOBAL STYLES Savannah Erasmus ========================================================= */
+/* ========================================================= DESIGN VARIABLES ========================================================= */ 
+:root { /* =========================== Theme Colours =========================== */ 
+   --primary: #2e6e8f; 
+   --secondary: #299ed8; 
+   --accent: #71b8dc; 
+   --background: #f6f8f5; 
+   --card-background: #ffffff; 
+   --text-dark: #333333; 
+   --text-light: #666666; 
+   --shadow: rgba(0, 0, 0, 0.08); 
+/* =========================== Page Layout =========================== */ 
+   --page-width: 1100px; 
+   --page-width-percent: 90%; 
+   --section-margin: clamp(25px, 4vw, 40px); 
+   --section-padding: clamp(25px, 4vw, 45px); 
+   --content-gap: clamp(20px, 4vw, 50px); 
+/* =========================== Spacing =========================== */ 
+   --spacing-xs: 5px; 
+   --spacing-small: 10px; 
+   --spacing-medium: 20px; 
+   --spacing-large: 40px; 
+   --spacing-xl: 60px; 
+/* =========================== Typography =========================== */ 
+   --font-family: Arial, Helvetica, sans-serif; 
+   --body-font-size: clamp(1rem, 1.6vw, 1.125rem); 
+   --small-font-size: clamp(0.9rem, 1.4vw, 1rem); 
+   --h1-font-size: clamp(1.8rem, 4vw, 2.5rem); 
+   --h2-font-size: clamp(1.35rem, 3vw, 1.6rem); 
+   --h3-font-size: clamp(1.05rem, 2vw, 1.25rem); 
+   --header-title-size: clamp(2.2rem, 6vw, 3rem); 
+   --header-subtitle-size: clamp(1.3rem, 3vw, 1.8rem); 
+   --header-text-size: clamp(1rem, 2vw, 1.25rem); 
+   --line-height: 1.7; 
+   --heading-line-height: 1.2; 
+/* =========================== Border Radius =========================== */ 
+   --section-radius: 20px; 
+   --card-radius: 12px; 
+   --button-radius: 10px; 
+   --image-radius: 8px; 
+/* =========================== Shadows =========================== */ 
+   --section-shadow: 0px 10px 25px var(--shadow); 
+   --card-shadow: 0px 5px 15px var(--shadow); 
+   --card-shadow-hover: 0px 10px 25px rgba(0, 0, 0, 0.15); 
+/* =========================== Grid =========================== */ 
+   --grid-gap: 20px; 
+   --skills-min-width: 200px; 
+   --documents-min-width: 220px; 
+/* =========================== Images =========================== */ 
+   --profile-image-width: 220px; 
+/* =========================== Buttons =========================== */ 
+   --button-padding-y: 14px; 
+   --button-padding-x: 25px; } 
+/* ========================================================= GLOBAL RESET ========================================================= */ 
+* { 
+   margin: 0; 
+   padding: 0; 
+   box-sizing: 
+   border-box; 
+} 
+html { 
+   scroll-behavior: smooth; 
+} 
+body { 
+   font-family: var(--font-family); 
+   background: var(--background); 
+   color: var(--text-dark); 
+   line-height: var(--line-height); 
+   overflow-x: hidden; 
+} 
+/* ========================================================= GLOBAL TYPOGRAPHY ========================================================= */ 
+h1, h2, h3 { 
+   line-height: var(--heading-line-height); 
+} 
+p, li { 
+   font-size: var(--body-font-size); 
+} 
+/* ========================================================= HEADER ========================================================= */ 
+header { 
+   background: linear-gradient( 135deg, var(--primary), var(--secondary), var(--accent) ); 
+   color: white; 
+   text-align: left; 
+   padding: clamp(50px, 8vw, 80px) clamp(20px, 6vw, 80px); 
+} 
+header h1 { 
+   font-size: var(--header-title-size); 
+   margin-bottom: var(--spacing-small); 
+} 
+header h2 { 
+   font-size: var(--header-subtitle-size); 
+   margin-bottom: var(--spacing-small); 
+} 
+header p { 
+   font-size: var(--header-text-size); 
+   opacity: 0.9; 
+} 
+/* ========================================================= CONTACT SECTION ========================================================= */ 
+#contact { 
+   width: var(--page-width-percent); 
+   max-width: var(--page-width); 
+   margin: var(--section-margin) auto; 
+   padding: var(--section-padding); 
+} 
+.contact-container { 
+   display: grid; 
+   grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr); 
+   gap: var(--content-gap); 
+   align-items: center; 
+} 
+.contact-left { 
+   text-align: center; 
+} 
+.contact-left img { 
+   width: min( var(--profile-image-width), 100% ); 
+   height: auto; 
+   border-radius: var(--image-radius); 
+   display: block; 
+   margin: 0 auto; 
+} 
+.contact-right { 
+   min-width: 0; 
+} 
+.contact-right p { 
+   margin: var(--spacing-small) 0; 
+   font-size: clamp(1rem, 1.8vw, 1.1rem); 
+   overflow-wrap: anywhere; 
+} 
+/* ========================================================= GENERAL CONTENT SECTIONS ========================================================= */ 
+section { 
+   background: var(--card-background); 
+   width: var(--page-width-percent); 
+   max-width: var(--page-width); 
+   margin: var(--section-margin) auto; 
+   padding: var(--section-padding); 
+   border-radius: var(--section-radius); 
+   box-shadow: var(--section-shadow); 
+} 
+section h1 { 
+   color: var(--primary); 
+   margin-bottom: var(--spacing-medium); 
+   font-size: var(--h1-font-size); 
+} section h2 { 
+   color: var(--secondary); 
+   margin-top: var(--spacing-medium); 
+   margin-bottom: var(--spacing-small); 
+   font-size: var(--h2-font-size); 
+} 
+section h3 { 
+   margin-top: var(--spacing-medium); 
+   margin-bottom: var(--spacing-xs); 
+   font-size: var(--h3-font-size); 
+} 
+section p { 
+   font-size: var(--body-font-size); 
+   margin-bottom: var(--spacing-small); 
+   overflow-wrap: break-word; 
+} 
+/* ========================================================= LISTS ========================================================= */ 
+ul { 
+   padding-left: 25px; 
+   font-size: var(--body-font-size); 
+} 
+li { 
+   margin-bottom: var(--spacing-small); 
+} 
+/* ========================================================= IMAGES ========================================================= */ 
+section img { 
+   display: block; 
+   max-width: 100%; 
+   height: auto; 
+   margin: 0 auto; 
+} 
+/* ========================================================= BUTTONS ========================================================= */ 
+.button { 
+   display: inline-block; 
+   background: var(--secondary); 
+   color: white; 
+   text-decoration: none; 
+   padding: var(--button-padding-y) var(--button-padding-x); 
+   border-radius: var(--button-radius); 
+   font-weight: bold; 
+   margin-top: var(--spacing-xs); 
+   margin-bottom: var(--spacing-medium); 
+   transition: 0.3s ease; 
+   max-width: 100%; 
+} 
+.button:hover { 
+   background: var(--primary); 
+   transform: translateY(-2px); 
+} 
+/* ========================================================= STANDARD BUTTON ========================================================= */ 
+button { 
+   background: var(--secondary); 
+   color: white; 
+   border: none; 
+   padding: 16px 35px; 
+   border-radius: 40px; 
+   font-size: clamp(1rem, 2vw, 1.125rem); 
+   cursor: pointer; 
+   transition: 0.3s; 
+   margin-bottom: var(--spacing-small); 
+} 
+button:hover { 
+   background: var(--primary); 
+   transform: translateY(-3px); 
+} 
+/* ========================================================= SKILLS ========================================================= */ 
+#skills { 
+   padding: clamp(30px, 5vw, 60px); 
+   text-align: center; 
+} 
+.skills-grid { 
+   display: grid; 
+   grid-template-columns: repeat( auto-fit, minmax( var(--skills-min-width), 1fr ) ); 
+   gap: var(--grid-gap); 
+   margin-top: 30px; 
+} 
+.skill-card { 
+   background: var(--card-background); 
+   padding: var(--spacing-medium); 
+   border-radius: var(--card-radius); 
+   box-shadow: var(--card-shadow); 
+   font-size: clamp(1rem, 1.5vw, 1.1rem); 
+   font-weight: 600; 
+   transition: 0.3s; 
+   overflow-wrap: break-word; 
+} 
+.skill-card:hover { 
+   transform: translateY(-5px); 
+   box-shadow: var(--card-shadow-hover); 
+} 
+/* ========================================================= DOCUMENTS ========================================================= */ 
+.documents { 
+   text-align: center; 
+} 
+.document-grid { 
+   display: grid; 
+   grid-template-columns: repeat( auto-fit, minmax( var(--documents-min-width), 1fr ) ); 
+   gap: var(--grid-gap); 
+   margin-top: 30px; 
+} 
+.document-item { 
+   background: var(--card-background); 
+   padding: var(--spacing-medium); 
+   border-radius: var(--card-radius); 
+   box-shadow: var(--card-shadow); 
+   font-size: clamp(1rem, 1.5vw, 1.1rem); 
+   font-weight: 600; 
+   overflow-wrap: break-word; 
+} 
+/* ========================================================= HERO ========================================================= */ 
+.hero { 
+   width: min( var(--page-width-percent), 900px ); 
+   margin: auto; 
+   text-align: center; 
+   padding: clamp(35px, 6vw, 70px) clamp(20px, 4vw, 50px); 
+   background: var(--card-background); 
+   border-radius: var(--section-radius); 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-items: center; 
+   box-shadow: var(--section-shadow); 
+} 
+.hero h2 { 
+   font-size: clamp(1.8rem, 5vw, 2.4rem); 
+   margin-bottom: var(--spacing-medium); 
+} 
+.hero p { 
+   font-size: clamp(1rem, 2vw, 1.25rem); 
+   color: var(--text-dark); 
+   margin-bottom: var(--spacing-large); 
+   max-width: 750px; 
+} 
+/* ========================================================= HERO WITH SIDE IMAGES ========================================================= */ 
+.hero-wrapper { 
+   display: grid; 
+   grid-template-columns: 25% 50% 25%; 
+   align-items: stretch; 
+   width: 100%; 
+   margin: var(--section-margin) auto; 
+   min-height: 350px; 
+} 
+.hero-image-container { 
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+   overflow: hidden;
+} 
+.hero-image { 
+   width: 100%; 
+   height: 100%; 
+   object-fit: cover; 
+} 
+/* ========================================================= FOOTER ========================================================= */ 
+footer { 
+   text-align: center; 
+   padding: 40px 20px; 
+   color: var(--text-light); 
+} 
+/* ========================================================= TABLET RESPONSIVENESS ========================================================= */ 
+@media (max-width: 768px) { 
+   /* =========================== Header =========================== */ 
+   header { 
+      text-align: center; 
+   } 
+   /* =========================== Sections =========================== */ 
+   section { width: 92%; } 
+   /* =========================== Contact =========================== */ 
+   .contact-container { 
+      grid-template-columns: 1fr; 
+      text-align: center; 
+   } 
+   .contact-left { margin-bottom: var(--spacing-small); } 
+   .contact-right { text-align: left; } 
+   /* =========================== Hero =========================== */ 
+   .hero-wrapper { 
+      grid-template-columns: 1fr; 
+      min-height: auto; 
+   } 
+   .hero-image-container { display: none; } 
+   .hero { width: 92%; margin: 30px auto; } 
+   /* =========================== Skills =========================== */ 
+   .skills-grid { grid-template-columns: repeat( 2, minmax(0, 1fr) ); } 
+   /* =========================== Documents =========================== */ 
+   .document-grid { grid-template-columns: repeat( 2, minmax(0, 1fr) ); } 
+} 
+/* ========================================================= PHONE RESPONSIVENESS ========================================================= */ 
+@media (max-width: 480px) { 
+   /* =========================== Body =========================== */ 
+   body { line-height: 1.6; } 
+   /* =========================== Header =========================== */ 
+   header { padding: 45px 20px; } 
+   header h1 { font-size: 2rem; } 
+   header h2 { font-size: 1.25rem; } 
+   header p { font-size: 1rem; } 
+   /* =========================== Sections =========================== */ 
+   section { 
+      width: calc(100% - 24px); 
+      margin: 20px auto; 
+      padding: 22px 18px; 
+      border-radius: 15px; } 
+   /* =========================== Contact =========================== */ 
+   #contact { width: calc(100% - 24px); padding: 25px 18px; } 
+   .contact-container { gap: var(--spacing-medium); } 
+   .contact-left img { width: 180px; } 
+   .contact-right { text-align: left; } 
+   /* =========================== Section Headings =========================== */ 
+   section h1 { font-size: 1.7rem; margin-bottom: 15px; } 
+   section h2 { font-size: 1.3rem; margin-top: var(--spacing-medium); } 
+   section h3 { font-size: 1.05rem; } 
+   /* =========================== Paragraphs =========================== */ 
+   section p { font-size: 1rem; line-height: 1.7; } 
+   /* =========================== Buttons =========================== */ 
+   .button { 
+      display: block; 
+      width: 100%; 
+      text-align: center; 
+      padding: 13px 15px; 
+      font-size: 0.95rem; 
+   } 
+   /* =========================== Skills =========================== */ 
+   .skills-grid { grid-template-columns: 1fr; gap: 15px; } 
+   .skill-card { padding: 16px; font-size: 1rem; }
+   /* =========================== Documents =========================== */ 
+   .document-grid { grid-template-columns: 1fr; gap: 15px; } 
+   .document-item { padding: 16px; font-size: 1rem; } 
+   /* =========================== Hero =========================== */ 
+   .hero { width: calc(100% - 24px); padding: 30px 20px; } 
+   .hero h2 { font-size: 1.8rem; } 
+   .hero p { font-size: 1rem; margin-bottom: 25px; } 
+   /* =========================== Footer =========================== */ 
+   footer { padding: 30px 15px; font-size: 0.9rem; } 
 }
