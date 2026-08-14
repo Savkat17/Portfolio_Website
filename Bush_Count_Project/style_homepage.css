@@ -75,6 +75,20 @@ header p{
     color:#666;
     margin-bottom:40px;
 }
+.button {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.button:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
 
 
 /* ===========================
