@@ -1,4 +1,3 @@
-
 /* =========================================================
    CATTLE PRICE PROJECT
    Responsive CSS
@@ -98,11 +97,20 @@
        Hero
     =========================== */
 
-    --hero-width: 900px;
-
     --hero-padding: 50px;
 
     --hero-min-height: 350px;
+
+
+    /* ===========================
+       Hero Columns
+    =========================== */
+
+    --hero-left-width: 25%;
+
+    --hero-center-width: 50%;
+
+    --hero-right-width: 25%;
 
 
     /* ===========================
@@ -145,14 +153,58 @@ body {
 
 
 /* =========================================================
-   HERO WITH LEFT AND RIGHT IMAGES
+   HEADER
+========================================================= */
+
+header {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary),
+            var(--accent)
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+
+header h1 {
+
+    font-size: var(--header-title-size);
+
+    margin-bottom: 15px;
+}
+
+
+header p {
+
+    font-size: var(--header-text-size);
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   HERO
+   Three columns:
+
+   LEFT IMAGE | HERO | RIGHT IMAGE
 ========================================================= */
 
 .hero-wrapper {
 
     display: grid;
 
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns:
+        var(--hero-left-width)
+        var(--hero-center-width)
+        var(--hero-right-width);
 
     align-items: stretch;
 
@@ -160,13 +212,13 @@ body {
 
     margin: 40px auto;
 
-    min-height: 350px;
+    min-height: var(--hero-min-height);
 }
 
 
-/* ===========================
-   Hero Images
-=========================== */
+/* =========================================================
+   HERO IMAGES
+========================================================= */
 
 .hero-image {
 
@@ -180,17 +232,17 @@ body {
 }
 
 
-/* ===========================
-   Centre Hero
-=========================== */
+/* =========================================================
+   CENTRE HERO
+========================================================= */
 
 .hero {
 
     background: var(--card-background);
 
-    border-radius: 20px;
+    border-radius: var(--hero-radius);
 
-    padding: 50px;
+    padding: var(--hero-padding);
 
     display: flex;
 
@@ -224,125 +276,9 @@ body {
     margin-bottom: 40px;
 }
 
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 768px) {
-
-    .hero-wrapper {
-
-        grid-template-columns:
-            20%
-            60%
-            20%;
-
-        min-height: 300px;
-
-        margin: 30px auto;
-    }
-
-
-    .hero {
-
-        padding: 30px 20px;
-    }
-
-
-    .hero h2 {
-
-        font-size: 30px;
-
-        line-height: 1.25;
-    }
-
-
-    .hero p {
-
-        font-size: 16px;
-
-        line-height: 1.6;
-
-        margin-bottom: 25px;
-    }
-
-}
-
-
-/* =========================================================
-   PHONE
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .hero-wrapper {
-
-        grid-template-columns:
-            15%
-            70%
-            15%;
-
-        min-height: 260px;
-
-        margin: 20px auto;
-    }
-
-
-    .hero {
-
-        padding: 25px 12px;
-
-        border-radius: 15px;
-    }
-
-
-    .hero h2 {
-
-        font-size: 22px;
-
-        line-height: 1.25;
-
-        margin-bottom: 12px;
-    }
-
-
-    .hero p {
-
-        font-size: 13px;
-
-        line-height: 1.5;
-
-        margin-bottom: 18px;
-    }
-
-
-    .hero .button {
-
-        width: 100%;
-
-        padding: 11px 6px;
-
-        font-size: 12px;
-
-        text-align: center;
-    }
-
-
-    .hero-image {
-
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: cover;
-    }
-
-}
-
 
 /* =========================================================
    LINK BUTTON
-   Original appearance preserved
 ========================================================= */
 
 .button {
@@ -375,7 +311,6 @@ body {
 
 /* =========================================================
    STANDARD BUTTON
-   Original appearance preserved
 ========================================================= */
 
 button {
@@ -408,7 +343,6 @@ button:hover {
 
 /* =========================================================
    CONTENT SECTIONS
-   Original appearance preserved
 ========================================================= */
 
 section {
@@ -492,64 +426,21 @@ footer {
 
 
 /* =========================================================
-   HERO WITH SIDE IMAGES
-   Original appearance preserved
-========================================================= */
-
-.hero-wrapper {
-
-    display: grid;
-
-    grid-template-columns:
-        25%
-        50%
-        25%;
-
-    align-items: stretch;
-
-    width: 100%;
-
-    margin: 40px auto;
-
-    min-height: var(--hero-min-height);
-}
-
-
-.hero-image-container {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
-}
-
-
-.hero-image {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-/* =========================================================
    TABLET RESPONSIVENESS
-   Only activates below 768px
+   Images REMAIN left and right
 ========================================================= */
 
 @media (max-width: 768px) {
 
-    /* Header */
+    /* ===========================
+       Header
+    =========================== */
 
     header {
 
         padding: 60px 20px;
     }
+
 
     header h1 {
 
@@ -557,7 +448,15 @@ footer {
     }
 
 
-    /* Sections */
+    header p {
+
+        font-size: 18px;
+    }
+
+
+    /* ===========================
+       Sections
+    =========================== */
 
     section {
 
@@ -567,37 +466,68 @@ footer {
     }
 
 
-    /* Hero */
+    /* ===========================
+       Hero Layout
 
-    .hero {
+       LEFT IMAGE | HERO | RIGHT IMAGE
 
-        width: 92%;
-
-        padding: 50px 30px;
-    }
-
+       20%       | 60%  | 20%
+    =========================== */
 
     .hero-wrapper {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            20%
+            60%
+            20%;
 
-        min-height: auto;
+        min-height: 300px;
+
+        margin: 30px auto;
     }
 
 
-    .hero-image-container {
+    /* ===========================
+       Hero
+    =========================== */
 
-        display: none;
+    .hero {
+
+        padding: 30px 20px;
     }
 
 
-    /* Images */
+    .hero h2 {
 
-    section img {
+        font-size: 30px;
+
+        line-height: 1.25;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ===========================
+       Hero Images
+    =========================== */
+
+    .hero-image {
 
         width: 100%;
 
-        height: auto;
+        height: 100%;
+
+        object-fit: cover;
     }
 
 }
@@ -605,7 +535,7 @@ footer {
 
 /* =========================================================
    PHONE RESPONSIVENESS
-   Only activates below 480px
+   Images STILL remain left and right
 ========================================================= */
 
 @media (max-width: 480px) {
@@ -642,7 +572,7 @@ footer {
 
     header p {
 
-        font-size: 17px;
+        font-size: 16px;
 
         line-height: 1.5;
     }
@@ -697,14 +627,33 @@ footer {
 
 
     /* ===========================
+       Hero Layout
+
+       LEFT IMAGE | HERO | RIGHT IMAGE
+
+       15%       | 70%  | 15%
+    =========================== */
+
+    .hero-wrapper {
+
+        grid-template-columns:
+            15%
+            70%
+            15%;
+
+        min-height: 260px;
+
+        margin: 20px auto;
+    }
+
+
+    /* ===========================
        Hero
     =========================== */
 
     .hero {
 
-        width: calc(100% - 24px);
-
-        padding: 35px 20px;
+        padding: 25px 12px;
 
         border-radius: 15px;
     }
@@ -712,54 +661,56 @@ footer {
 
     .hero h2 {
 
-        font-size: 28px;
+        font-size: 22px;
 
         line-height: 1.25;
 
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
 
     .hero p {
 
-        font-size: 17px;
+        font-size: 13px;
 
-        line-height: 1.6;
+        line-height: 1.5;
 
-        margin-bottom: 25px;
+        margin-bottom: 18px;
     }
 
 
     /* ===========================
-       Buttons
+       Hero Button
     =========================== */
 
-    .button {
-
-        display: block;
+    .hero .button {
 
         width: 100%;
 
+        padding: 11px 6px;
+
+        font-size: 12px;
+
         text-align: center;
-
-        padding: 13px 15px;
-
-        font-size: 15px;
-    }
-
-
-    button {
-
-        max-width: 100%;
-
-        padding: 14px 25px;
-
-        font-size: 16px;
     }
 
 
     /* ===========================
-       Images
+       Hero Images
+    =========================== */
+
+    .hero-image {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* ===========================
+       Other Images
     =========================== */
 
     section img {
@@ -782,4 +733,3 @@ footer {
     }
 
 }
-```
