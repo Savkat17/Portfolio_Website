@@ -1,7 +1,7 @@
 /* =========================================================
    BUSH COUNTING PROJECT
    Responsive CSS
-   Original Desktop Look Preserved
+   Same structure and formatting as Cattle Project
 ========================================================= */
 
 
@@ -26,32 +26,30 @@
 
     --text-dark: #333333;
     --text-light: #666666;
-    --footer-text: #777777;
 
     --shadow: rgba(0,0,0,0.08);
-    --image-shadow: rgba(0,0,0,0.15);
 
 
     /* ===========================
-       Page Layout
+       Page / Layout
     =========================== */
 
     --page-width: 1100px;
     --page-width-percent: 90%;
 
     --section-margin: 40px;
-    --section-padding: 50px;
+    --section-padding: 20px;
+
+    --content-gap: 40px;
 
 
     /* ===========================
        Spacing
     =========================== */
 
-    --spacing-xs: 5px;
     --spacing-small: 10px;
     --spacing-medium: 20px;
     --spacing-large: 40px;
-    --spacing-xl: 60px;
 
 
     /* ===========================
@@ -69,13 +67,9 @@
 
     --section-title-size: 32px;
 
-    --section-subtitle-size: 18px;
-
     --hero-title-size: 38px;
 
     --hero-text-size: 20px;
-
-    --pipeline-title-size: 18px;
 
     --line-height: 1.8;
 
@@ -92,8 +86,6 @@
 
     --hero-radius: 20px;
 
-    --pipeline-radius: 15px;
-
 
     /* ===========================
        Shadows
@@ -102,15 +94,21 @@
     --section-shadow:
         0px 10px 25px var(--shadow);
 
-    --image-shadow-value:
-        0px 8px 20px var(--image-shadow);
-
 
     /* ===========================
        Hero
     =========================== */
 
+    --hero-width: 900px;
+
+    --hero-padding: 50px;
+
     --hero-min-height: 350px;
+
+
+    /* ===========================
+       Hero Images
+    =========================== */
 
     --hero-left-width: 25%;
 
@@ -118,40 +116,22 @@
 
     --hero-right-width: 25%;
 
-
-    /* ===========================
-       Pipeline
-    =========================== */
-
-    --pipeline-image-width: 220px;
-
-    --pipeline-arrow-size: 45px;
-
-
-    /* ===========================
-       Buttons
-    =========================== */
-
-    --button-padding-y: 15px;
-
-    --button-padding-x: 30px;
-
 }
 
 
 /* =========================================================
-   GLOBAL RESET
+   GENERAL PAGE STYLING
 ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-html {
-    scroll-behavior: smooth;
 }
 
 
@@ -171,7 +151,7 @@ body {
 
 /* =========================================================
    HEADER
-   ORIGINAL STYLE PRESERVED
+   Same structure as Cattle Project
 ========================================================= */
 
 header {
@@ -179,15 +159,16 @@ header {
     background:
         linear-gradient(
             135deg,
-            #245c3d,
-            #5d8c51
+            var(--primary),
+            var(--secondary),
+            var(--accent)
         );
 
     color: white;
 
     text-align: center;
 
-    padding: 50px 10px;
+    padding: 80px 20px;
 }
 
 
@@ -221,9 +202,7 @@ header .button {
 
     text-decoration: none;
 
-    padding:
-        var(--button-padding-y)
-        var(--button-padding-x);
+    padding: 15px 30px;
 
     border-radius: var(--button-radius);
 
@@ -244,7 +223,7 @@ header .button:hover {
 
 
 /* =========================================================
-   HERO WITH LEFT AND RIGHT IMAGES
+   HERO
 ========================================================= */
 
 .hero-wrapper {
@@ -288,11 +267,15 @@ header .button:hover {
 
 .hero {
 
+    max-width: var(--hero-width);
+
+    margin: auto;
+
     background: var(--card-background);
 
     border-radius: var(--hero-radius);
 
-    padding: 50px;
+    padding: var(--hero-padding);
 
     display: flex;
 
@@ -323,16 +306,14 @@ header .button:hover {
 
     font-size: var(--hero-text-size);
 
-    color: var(--text-light);
+    color: var(--text-dark);
 
     margin-bottom: 40px;
-
-    max-width: 750px;
 }
 
 
 /* =========================================================
-   BUTTON
+   LINK BUTTON
 ========================================================= */
 
 .button {
@@ -345,9 +326,7 @@ header .button:hover {
 
     text-decoration: none;
 
-    padding:
-        var(--button-padding-y)
-        var(--button-padding-x);
+    padding: 15px 30px;
 
     border-radius: var(--button-radius);
 
@@ -399,14 +378,14 @@ button:hover {
 
 /* =========================================================
    CONTENT SECTIONS
-   ORIGINAL WHITE "WINDOW" STYLE PRESERVED
+   Same "window" structure as Cattle Project
 ========================================================= */
 
 section {
 
-    background: white;
+    background: var(--card-background);
 
-    width: 90%;
+    width: var(--page-width-percent);
 
     max-width: var(--page-width);
 
@@ -416,8 +395,7 @@ section {
 
     border-radius: var(--section-radius);
 
-    box-shadow:
-        0px 10px 25px rgba(0,0,0,0.08);
+    box-shadow: var(--section-shadow);
 
     box-sizing: border-box;
 }
@@ -435,13 +413,11 @@ section h2 {
 
 section h3 {
 
-    font-size: var(--section-subtitle-size);
-
     margin-top: 20px;
 
     margin-bottom: 10px;
 
-    color: var(--text-dark);
+    font-size: 18px;
 }
 
 
@@ -454,10 +430,6 @@ section p {
     overflow-wrap: break-word;
 }
 
-
-/* =========================================================
-   LISTS
-========================================================= */
 
 ul {
 
@@ -473,9 +445,22 @@ li {
 }
 
 
+section img {
+
+    display: block;
+
+    width: 95%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    max-width: 100%;
+}
+
+
 /* =========================================================
    IMAGE PIPELINE
-   ORIGINAL DESKTOP STYLE PRESERVED
 ========================================================= */
 
 .pipeline-grid {
@@ -511,7 +496,7 @@ li {
 
     width: 100%;
 
-    max-width: var(--pipeline-image-width);
+    max-width: 220px;
 
     aspect-ratio: 1 / 1;
 
@@ -519,7 +504,7 @@ li {
 
     background: white;
 
-    border-radius: var(--pipeline-radius);
+    border-radius: 15px;
 
     box-shadow:
         0px 8px 20px rgba(0,0,0,0.15);
@@ -530,7 +515,7 @@ li {
 
     margin-top: 15px;
 
-    font-size: var(--pipeline-title-size);
+    font-size: 18px;
 
     color: var(--header-dark);
 }
@@ -538,7 +523,7 @@ li {
 
 .pipeline-arrow {
 
-    font-size: var(--pipeline-arrow-size);
+    font-size: 45px;
 
     color: var(--accent);
 
@@ -556,18 +541,12 @@ footer {
 
     padding: 40px;
 
-    color: var(--footer-text);
+    color: var(--text-light);
 }
 
 
 /* =========================================================
    TABLET RESPONSIVENESS
-   769px → 481px
-
-   IMPORTANT:
-   Hero remains:
-
-   IMAGE | HERO | IMAGE
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -575,62 +554,44 @@ footer {
 
     /* ===========================
        Header
-       Original appearance retained
     =========================== */
 
     header {
 
-        padding: 50px 10px;
+        padding: 60px 20px;
     }
 
 
     header h1 {
 
         font-size: 42px;
-
-        line-height: 1.2;
     }
 
 
     header p {
 
         font-size: 18px;
-
-        line-height: 1.5;
     }
 
 
     /* ===========================
-       Content Sections
+       Sections
     =========================== */
 
     section {
 
         width: 92%;
 
-        padding: 40px;
-    }
-
-
-    section h2 {
-
-        font-size: 30px;
-
-        line-height: 1.25;
-    }
-
-
-    section p {
-
-        font-size: 17px;
-
-        line-height: 1.7;
+        padding: 30px;
     }
 
 
     /* ===========================
        HERO
-       Image | Hero | Image
+
+       Still:
+
+       IMAGE | HERO | IMAGE
     =========================== */
 
     .hero-wrapper {
@@ -649,8 +610,6 @@ footer {
     .hero {
 
         padding: 35px 20px;
-
-        border-radius: 20px;
     }
 
 
@@ -697,7 +656,7 @@ footer {
 
         width: 100%;
 
-        max-width: var(--pipeline-image-width);
+        max-width: 220px;
     }
 
 }
@@ -705,19 +664,13 @@ footer {
 
 /* =========================================================
    PHONE RESPONSIVENESS
-   480px and below
-
-   IMPORTANT:
-   Hero STILL remains:
-
-   IMAGE | HERO | IMAGE
 ========================================================= */
 
 @media (max-width: 480px) {
 
 
     /* ===========================
-       Body
+       General
     =========================== */
 
     body {
@@ -728,58 +681,45 @@ footer {
 
     /* ===========================
        Header
-       ORIGINAL STYLE PRESERVED
     =========================== */
 
     header {
 
-        padding: 50px 15px;
+        padding: 45px 20px;
     }
 
 
     header h1 {
 
-        font-size: 32px;
+        font-size: 34px;
 
         line-height: 1.2;
 
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
 
     header p {
 
-        font-size: 16px;
+        font-size: 17px;
 
         line-height: 1.5;
     }
 
 
     /* ===========================
-       Header Button
-    =========================== */
-
-    header .button {
-
-        padding: 13px 15px;
-
-        font-size: 14px;
-    }
-
-
-    /* ===========================
-       WHITE WINDOW SECTIONS
+       Sections
     =========================== */
 
     section {
 
         width: calc(100% - 24px);
 
-        margin: 25px auto;
+        margin: 20px auto;
 
-        padding: 25px 20px;
+        padding: 22px 18px;
 
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
 
@@ -798,8 +738,6 @@ footer {
         font-size: 18px;
 
         line-height: 1.3;
-
-        margin-top: 18px;
     }
 
 
@@ -808,8 +746,6 @@ footer {
         font-size: 16px;
 
         line-height: 1.7;
-
-        margin-bottom: 15px;
     }
 
 
@@ -829,7 +765,10 @@ footer {
 
     /* ===========================
        HERO
-       Image | Hero | Image
+
+       Still:
+
+       IMAGE | HERO | IMAGE
     =========================== */
 
     .hero-wrapper {
@@ -841,7 +780,7 @@ footer {
 
         min-height: 260px;
 
-        margin: 25px auto;
+        margin: 20px auto;
     }
 
 
@@ -849,7 +788,7 @@ footer {
 
         padding: 25px 12px;
 
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
 
@@ -869,7 +808,7 @@ footer {
 
         line-height: 1.5;
 
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
 
@@ -916,7 +855,7 @@ footer {
 
 
     /* ===========================
-       PIPELINE
+       Pipeline
     =========================== */
 
     .pipeline-grid {
