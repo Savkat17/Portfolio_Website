@@ -28,10 +28,8 @@
     --text-light: #666666;
     --footer-text: #777777;
 
-    --shadow: rgba(0, 0, 0, 0.08);
-
-    --image-shadow:
-        rgba(0, 0, 0, 0.15);
+    --shadow: rgba(0,0,0,0.08);
+    --image-shadow: rgba(0,0,0,0.15);
 
 
     /* ===========================
@@ -71,7 +69,7 @@
 
     --section-title-size: 32px;
 
-    --section-subtitle-size: 20px;
+    --section-subtitle-size: 18px;
 
     --hero-title-size: 38px;
 
@@ -146,17 +144,13 @@
 ========================================================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
 }
 
 
 html {
-
     scroll-behavior: smooth;
 }
 
@@ -185,8 +179,8 @@ header {
     background:
         linear-gradient(
             135deg,
-            var(--header-dark),
-            var(--accent)
+            #245c3d,
+            #5d8c51
         );
 
     color: white;
@@ -227,7 +221,9 @@ header .button {
 
     text-decoration: none;
 
-    padding: var(--button-padding-y) var(--button-padding-x);
+    padding:
+        var(--button-padding-y)
+        var(--button-padding-x);
 
     border-radius: var(--button-radius);
 
@@ -248,8 +244,7 @@ header .button:hover {
 
 
 /* =========================================================
-   HERO
-   LEFT IMAGE | HERO | RIGHT IMAGE
+   HERO WITH LEFT AND RIGHT IMAGES
 ========================================================= */
 
 .hero-wrapper {
@@ -309,17 +304,18 @@ header .button:hover {
 
     text-align: center;
 
-    box-shadow: var(--section-shadow);
+    box-shadow:
+        0px 10px 25px var(--shadow);
 }
 
 
 .hero h2 {
 
-    color: var(--header-dark);
-
     font-size: var(--hero-title-size);
 
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: 20px;
+
+    color: var(--header-dark);
 }
 
 
@@ -329,14 +325,14 @@ header .button:hover {
 
     color: var(--text-light);
 
-    margin-bottom: var(--spacing-large);
+    margin-bottom: 40px;
 
     max-width: 750px;
 }
 
 
 /* =========================================================
-   BUTTON LINK
+   BUTTON
 ========================================================= */
 
 .button {
@@ -403,13 +399,14 @@ button:hover {
 
 /* =========================================================
    CONTENT SECTIONS
+   ORIGINAL WHITE "WINDOW" STYLE PRESERVED
 ========================================================= */
 
 section {
 
-    background: var(--card-background);
+    background: white;
 
-    width: var(--page-width-percent);
+    width: 90%;
 
     max-width: var(--page-width);
 
@@ -419,7 +416,8 @@ section {
 
     border-radius: var(--section-radius);
 
-    box-shadow: var(--section-shadow);
+    box-shadow:
+        0px 10px 25px rgba(0,0,0,0.08);
 
     box-sizing: border-box;
 }
@@ -429,7 +427,7 @@ section h2 {
 
     color: var(--header-dark);
 
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: 20px;
 
     font-size: var(--section-title-size);
 }
@@ -439,9 +437,11 @@ section h3 {
 
     font-size: var(--section-subtitle-size);
 
-    margin-top: var(--spacing-medium);
+    margin-top: 20px;
 
-    margin-bottom: var(--spacing-small);
+    margin-bottom: 10px;
+
+    color: var(--text-dark);
 }
 
 
@@ -495,7 +495,7 @@ li {
 
     gap: 20px;
 
-    margin-top: var(--spacing-large);
+    margin-top: 40px;
 }
 
 
@@ -517,11 +517,12 @@ li {
 
     object-fit: contain;
 
-    background: var(--card-background);
+    background: white;
 
     border-radius: var(--pipeline-radius);
 
-    box-shadow: var(--image-shadow-value);
+    box-shadow:
+        0px 8px 20px rgba(0,0,0,0.15);
 }
 
 
@@ -560,28 +561,76 @@ footer {
 
 
 /* =========================================================
-   TABLET
-   Keep images LEFT and RIGHT of hero
+   TABLET RESPONSIVENESS
+   769px → 481px
+
+   IMPORTANT:
+   Hero remains:
+
+   IMAGE | HERO | IMAGE
 ========================================================= */
 
 @media (max-width: 768px) {
 
+
     /* ===========================
-       Sections
+       Header
+       Original appearance retained
+    =========================== */
+
+    header {
+
+        padding: 50px 10px;
+    }
+
+
+    header h1 {
+
+        font-size: 42px;
+
+        line-height: 1.2;
+    }
+
+
+    header p {
+
+        font-size: 18px;
+
+        line-height: 1.5;
+    }
+
+
+    /* ===========================
+       Content Sections
     =========================== */
 
     section {
 
         width: 92%;
 
-        padding: 30px;
+        padding: 40px;
+    }
+
+
+    section h2 {
+
+        font-size: 30px;
+
+        line-height: 1.25;
+    }
+
+
+    section p {
+
+        font-size: 17px;
+
+        line-height: 1.7;
     }
 
 
     /* ===========================
-       Hero Layout
-
-       IMAGE | HERO | IMAGE
+       HERO
+       Image | Hero | Image
     =========================== */
 
     .hero-wrapper {
@@ -599,7 +648,9 @@ footer {
 
     .hero {
 
-        padding: 30px 20px;
+        padding: 35px 20px;
+
+        border-radius: 20px;
     }
 
 
@@ -653,30 +704,36 @@ footer {
 
 
 /* =========================================================
-   PHONE
-   Keep images LEFT and RIGHT of hero
+   PHONE RESPONSIVENESS
+   480px and below
+
+   IMPORTANT:
+   Hero STILL remains:
+
+   IMAGE | HERO | IMAGE
 ========================================================= */
 
 @media (max-width: 480px) {
 
+
     /* ===========================
-       General
+       Body
     =========================== */
 
     body {
 
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
 
     /* ===========================
        Header
-       Original appearance retained
+       ORIGINAL STYLE PRESERVED
     =========================== */
 
     header {
 
-        padding: 45px 20px;
+        padding: 50px 15px;
     }
 
 
@@ -685,30 +742,44 @@ footer {
         font-size: 32px;
 
         line-height: 1.2;
+
+        margin-bottom: 15px;
     }
 
 
     header p {
 
-        font-size: 17px;
+        font-size: 16px;
 
         line-height: 1.5;
     }
 
 
     /* ===========================
-       Sections
+       Header Button
+    =========================== */
+
+    header .button {
+
+        padding: 13px 15px;
+
+        font-size: 14px;
+    }
+
+
+    /* ===========================
+       WHITE WINDOW SECTIONS
     =========================== */
 
     section {
 
         width: calc(100% - 24px);
 
-        margin: 20px auto;
+        margin: 25px auto;
 
-        padding: 22px 18px;
+        padding: 25px 20px;
 
-        border-radius: 15px;
+        border-radius: 20px;
     }
 
 
@@ -717,6 +788,8 @@ footer {
         font-size: 26px;
 
         line-height: 1.25;
+
+        margin-bottom: 15px;
     }
 
 
@@ -725,6 +798,8 @@ footer {
         font-size: 18px;
 
         line-height: 1.3;
+
+        margin-top: 18px;
     }
 
 
@@ -733,6 +808,8 @@ footer {
         font-size: 16px;
 
         line-height: 1.7;
+
+        margin-bottom: 15px;
     }
 
 
@@ -751,9 +828,8 @@ footer {
 
 
     /* ===========================
-       Hero Layout
-
-       IMAGE | HERO | IMAGE
+       HERO
+       Image | Hero | Image
     =========================== */
 
     .hero-wrapper {
@@ -765,7 +841,7 @@ footer {
 
         min-height: 260px;
 
-        margin: 20px auto;
+        margin: 25px auto;
     }
 
 
@@ -773,7 +849,7 @@ footer {
 
         padding: 25px 12px;
 
-        border-radius: 15px;
+        border-radius: 20px;
     }
 
 
@@ -793,12 +869,12 @@ footer {
 
         line-height: 1.5;
 
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 
 
     /* ===========================
-       Hero Images
+       HERO IMAGES
     =========================== */
 
     .hero-image {
@@ -823,9 +899,9 @@ footer {
 
         text-align: center;
 
-        padding: 13px 15px;
+        padding: 13px 10px;
 
-        font-size: 15px;
+        font-size: 14px;
     }
 
 
@@ -840,7 +916,7 @@ footer {
 
 
     /* ===========================
-       Pipeline
+       PIPELINE
     =========================== */
 
     .pipeline-grid {
