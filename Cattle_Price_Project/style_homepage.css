@@ -1,6 +1,8 @@
-```css
+
 /* =========================================================
-   CATTLE PRICE PROJECT - GLOBAL STYLES
+   CATTLE PRICE PROJECT
+   Responsive CSS
+   Original Desktop Look Preserved
 ========================================================= */
 
 
@@ -24,32 +26,29 @@
     --text-dark: #333333;
     --text-light: #666666;
 
-    --shadow: rgba(0, 0, 0, 0.08);
+    --shadow: rgba(0,0,0,0.08);
 
 
     /* ===========================
-       Page Layout
+       Page / Layout
     =========================== */
 
     --page-width: 1100px;
     --page-width-percent: 90%;
 
-    --section-margin: clamp(25px, 4vw, 40px);
+    --section-margin: 40px;
+    --section-padding: 20px;
 
-    --section-padding: clamp(25px, 4vw, 45px);
-
-    --content-gap: clamp(20px, 4vw, 50px);
+    --content-gap: 40px;
 
 
     /* ===========================
        Spacing
     =========================== */
 
-    --spacing-xs: 5px;
     --spacing-small: 10px;
     --spacing-medium: 20px;
     --spacing-large: 40px;
-    --spacing-xl: 60px;
 
 
     /* ===========================
@@ -59,38 +58,19 @@
     --font-family:
         Arial, Helvetica, sans-serif;
 
-    --body-font-size:
-        clamp(1rem, 1.6vw, 1.125rem);
+    --body-font-size: 18px;
 
-    --small-font-size:
-        clamp(0.9rem, 1.4vw, 1rem);
+    --header-title-size: 48px;
 
-    --h1-font-size:
-        clamp(1.8rem, 4vw, 2.5rem);
+    --header-text-size: 20px;
 
-    --h2-font-size:
-        clamp(1.6rem, 3.5vw, 2rem);
+    --section-title-size: 32px;
 
-    --h3-font-size:
-        clamp(1.05rem, 2vw, 1.25rem);
+    --hero-title-size: 38px;
 
-    --header-title-size:
-        clamp(2.2rem, 6vw, 3rem);
+    --hero-text-size: 20px;
 
-    --header-text-size:
-        clamp(1rem, 2vw, 1.25rem);
-
-    --hero-title-size:
-        clamp(1.8rem, 5vw, 2.4rem);
-
-    --hero-text-size:
-        clamp(1rem, 2vw, 1.25rem);
-
-    --line-height:
-        1.7;
-
-    --heading-line-height:
-        1.2;
+    --line-height: 1.8;
 
 
     /* ===========================
@@ -99,11 +79,11 @@
 
     --section-radius: 20px;
 
-    --card-radius: 12px;
-
     --button-radius: 10px;
 
     --round-button-radius: 40px;
+
+    --hero-radius: 20px;
 
 
     /* ===========================
@@ -113,19 +93,6 @@
     --section-shadow:
         0px 10px 25px var(--shadow);
 
-    --card-shadow:
-        0px 5px 15px var(--shadow);
-
-    --card-shadow-hover:
-        0px 10px 25px rgba(0, 0, 0, 0.15);
-
-
-    /* ===========================
-       Grid
-    =========================== */
-
-    --grid-gap: 20px;
-
 
     /* ===========================
        Hero
@@ -133,11 +100,9 @@
 
     --hero-width: 900px;
 
+    --hero-padding: 50px;
+
     --hero-min-height: 350px;
-
-    --hero-side-width: 25%;
-
-    --hero-center-width: 50%;
 
 
     /* ===========================
@@ -146,31 +111,22 @@
 
     --section-image-width: 95%;
 
-
-    /* ===========================
-       Buttons
-    =========================== */
-
-    --button-padding-y: 14px;
-
-    --button-padding-x: 25px;
-
 }
 
 
 /* =========================================================
-   GLOBAL RESET
+   GENERAL PAGE STYLING
 ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-html {
-    scroll-behavior: smooth;
 }
 
 
@@ -189,24 +145,8 @@ body {
 
 
 /* =========================================================
-   GLOBAL TYPOGRAPHY
-========================================================= */
-
-h1,
-h2,
-h3 {
-    line-height: var(--heading-line-height);
-}
-
-
-p,
-li {
-    font-size: var(--body-font-size);
-}
-
-
-/* =========================================================
    HEADER
+   Original appearance preserved
 ========================================================= */
 
 header {
@@ -223,9 +163,7 @@ header {
 
     text-align: center;
 
-    padding:
-        clamp(50px, 8vw, 80px)
-        clamp(20px, 6vw, 80px);
+    padding: 80px 20px;
 }
 
 
@@ -247,25 +185,22 @@ header p {
 
 /* =========================================================
    HERO
+   Original appearance preserved
 ========================================================= */
 
 .hero {
 
-    width:
-        min(
-            var(--page-width-percent),
-            var(--hero-width)
-        );
+    max-width: var(--hero-width);
 
     margin: auto;
 
+    text-align: center;
+
+    padding: 70px 30px;
+
     background: var(--card-background);
 
-    border-radius: var(--section-radius);
-
-    padding:
-        clamp(35px, 6vw, 70px)
-        clamp(20px, 5vw, 50px);
+    border-radius: var(--hero-radius);
 
     display: flex;
 
@@ -275,19 +210,16 @@ header p {
 
     align-items: center;
 
-    text-align: center;
-
-    box-shadow: var(--section-shadow);
+    box-shadow:
+        0px 10px 25px var(--shadow);
 }
 
 
 .hero h2 {
 
-    color: var(--primary);
-
     font-size: var(--hero-title-size);
 
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: 20px;
 }
 
 
@@ -297,14 +229,13 @@ header p {
 
     color: var(--text-dark);
 
-    margin-bottom: var(--spacing-large);
-
-    max-width: 750px;
+    margin-bottom: 40px;
 }
 
 
 /* =========================================================
-   BUTTON LINK
+   LINK BUTTON
+   Original appearance preserved
 ========================================================= */
 
 .button {
@@ -317,21 +248,13 @@ header p {
 
     text-decoration: none;
 
-    padding:
-        var(--button-padding-y)
-        var(--button-padding-x);
+    padding: 15px 30px;
 
     border-radius: var(--button-radius);
 
     font-weight: bold;
 
-    margin-top: var(--spacing-xs);
-
-    margin-bottom: var(--spacing-medium);
-
     transition: 0.3s ease;
-
-    max-width: 100%;
 }
 
 
@@ -345,6 +268,7 @@ header p {
 
 /* =========================================================
    STANDARD BUTTON
+   Original appearance preserved
 ========================================================= */
 
 button {
@@ -359,14 +283,11 @@ button {
 
     border-radius: var(--round-button-radius);
 
-    font-size:
-        clamp(1rem, 2vw, 1.125rem);
+    font-size: 18px;
 
     cursor: pointer;
 
     transition: 0.3s;
-
-    margin-bottom: var(--spacing-small);
 }
 
 
@@ -380,6 +301,7 @@ button:hover {
 
 /* =========================================================
    CONTENT SECTIONS
+   Original appearance preserved
 ========================================================= */
 
 section {
@@ -397,6 +319,8 @@ section {
     border-radius: var(--section-radius);
 
     box-shadow: var(--section-shadow);
+
+    box-sizing: border-box;
 }
 
 
@@ -404,19 +328,9 @@ section h2 {
 
     color: var(--primary);
 
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: 20px;
 
-    font-size: var(--h2-font-size);
-}
-
-
-section h3 {
-
-    font-size: var(--h3-font-size);
-
-    margin-top: var(--spacing-medium);
-
-    margin-bottom: var(--spacing-small);
+    font-size: var(--section-title-size);
 }
 
 
@@ -425,14 +339,8 @@ section p {
     font-size: var(--body-font-size);
 
     margin-bottom: 15px;
-
-    overflow-wrap: break-word;
 }
 
-
-/* =========================================================
-   LISTS
-========================================================= */
 
 ul {
 
@@ -444,13 +352,9 @@ ul {
 
 li {
 
-    margin-bottom: var(--spacing-small);
+    margin-bottom: 12px;
 }
 
-
-/* =========================================================
-   SECTION IMAGES
-========================================================= */
 
 section img {
 
@@ -458,16 +362,31 @@ section img {
 
     width: var(--section-image-width);
 
-    max-width: 100%;
-
     height: auto;
 
     margin: 0 auto;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: var(--text-light);
 }
 
 
 /* =========================================================
    HERO WITH SIDE IMAGES
+   Original appearance preserved
 ========================================================= */
 
 .hero-wrapper {
@@ -475,15 +394,15 @@ section img {
     display: grid;
 
     grid-template-columns:
-        var(--hero-side-width)
-        var(--hero-center-width)
-        var(--hero-side-width);
+        25%
+        50%
+        25%;
 
     align-items: stretch;
 
     width: 100%;
 
-    margin: var(--section-margin) auto;
+    margin: 40px auto;
 
     min-height: var(--hero-min-height);
 }
@@ -512,53 +431,42 @@ section img {
 
 
 /* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    text-align: center;
-
-    padding: 40px 20px;
-
-    color: var(--text-light);
-}
-
-
-/* =========================================================
    TABLET RESPONSIVENESS
+   Only activates below 768px
 ========================================================= */
 
 @media (max-width: 768px) {
 
-
-    /* ===========================
-       Header
-    =========================== */
+    /* Header */
 
     header {
 
-        text-align: center;
+        padding: 60px 20px;
+    }
+
+    header h1 {
+
+        font-size: 42px;
     }
 
 
-    /* ===========================
-       Sections
-    =========================== */
+    /* Sections */
 
     section {
 
         width: 92%;
+
+        padding: 30px;
     }
 
 
-    /* ===========================
-       Hero
-    =========================== */
+    /* Hero */
 
     .hero {
 
         width: 92%;
+
+        padding: 50px 30px;
     }
 
 
@@ -576,13 +484,13 @@ footer {
     }
 
 
-    /* ===========================
-       Images
-    =========================== */
+    /* Images */
 
     section img {
 
         width: 100%;
+
+        height: auto;
     }
 
 }
@@ -590,18 +498,18 @@ footer {
 
 /* =========================================================
    PHONE RESPONSIVENESS
+   Only activates below 480px
 ========================================================= */
 
 @media (max-width: 480px) {
 
-
     /* ===========================
-       Body
+       General
     =========================== */
 
     body {
 
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
 
@@ -617,13 +525,19 @@ footer {
 
     header h1 {
 
-        font-size: 2rem;
+        font-size: 34px;
+
+        line-height: 1.2;
+
+        margin-bottom: 12px;
     }
 
 
     header p {
 
-        font-size: 1rem;
+        font-size: 17px;
+
+        line-height: 1.5;
     }
 
 
@@ -643,6 +557,38 @@ footer {
     }
 
 
+    section h2 {
+
+        font-size: 26px;
+
+        line-height: 1.25;
+
+        margin-bottom: 15px;
+    }
+
+
+    section p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    ul {
+
+        font-size: 16px;
+
+        padding-left: 22px;
+    }
+
+
+    li {
+
+        margin-bottom: 10px;
+    }
+
+
     /* ===========================
        Hero
     =========================== */
@@ -651,7 +597,7 @@ footer {
 
         width: calc(100% - 24px);
 
-        padding: 30px 20px;
+        padding: 35px 20px;
 
         border-radius: 15px;
     }
@@ -659,43 +605,21 @@ footer {
 
     .hero h2 {
 
-        font-size: 1.8rem;
+        font-size: 28px;
+
+        line-height: 1.25;
+
+        margin-bottom: 15px;
     }
 
 
     .hero p {
 
-        font-size: 1rem;
+        font-size: 17px;
+
+        line-height: 1.6;
 
         margin-bottom: 25px;
-    }
-
-
-    /* ===========================
-       Section Headings
-    =========================== */
-
-    section h2 {
-
-        font-size: 1.5rem;
-    }
-
-
-    section h3 {
-
-        font-size: 1.05rem;
-    }
-
-
-    /* ===========================
-       Paragraphs
-    =========================== */
-
-    section p {
-
-        font-size: 1rem;
-
-        line-height: 1.7;
     }
 
 
@@ -713,7 +637,7 @@ footer {
 
         padding: 13px 15px;
 
-        font-size: 0.95rem;
+        font-size: 15px;
     }
 
 
@@ -723,7 +647,7 @@ footer {
 
         padding: 14px 25px;
 
-        font-size: 1rem;
+        font-size: 16px;
     }
 
 
@@ -747,7 +671,7 @@ footer {
 
         padding: 30px 15px;
 
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 
 }
