@@ -11,9 +11,7 @@
 
 :root {
 
-    /* ===========================
-       Theme Colours
-    =========================== */
+    /* Theme Colours */
 
     --primary: rgb(117, 71, 29);
     --secondary: rgb(148, 96, 47);
@@ -28,20 +26,19 @@
     --shadow: rgba(0, 0, 0, 0.08);
 
 
-    /* ===========================
-       Page Layout
-    =========================== */
+    /* Page */
 
     --page-width: 1100px;
     --page-width-percent: 90%;
+
+
+    /* Spacing */
 
     --section-margin: 40px;
     --section-padding: 50px;
 
 
-    /* ===========================
-       Typography
-    =========================== */
+    /* Typography */
 
     --font-family:
         Arial, Helvetica, sans-serif;
@@ -61,35 +58,22 @@
     --line-height: 1.8;
 
 
-    /* ===========================
-       Header
-    =========================== */
+    /* Header */
 
     --header-height: 400px;
 
 
-    /* ===========================
-       Border Radius
-    =========================== */
+    /* Borders */
 
     --section-radius: 20px;
 
     --button-radius: 40px;
 
 
-    /* ===========================
-       Shadows
-    =========================== */
+    /* Shadow */
 
     --section-shadow:
         0px 10px 25px var(--shadow);
-
-
-    /* ===========================
-       Images
-    =========================== */
-
-    --section-image-width: 90%;
 }
 
 
@@ -125,14 +109,14 @@ body {
 
 /* =========================================================
    HEADER
-   Original appearance preserved
+   ORIGINAL DESKTOP STYLE
 ========================================================= */
 
 header {
 
     width: 100%;
 
-    height: var(--header-height);
+    height: 400px;
 
     background-image:
         url("../images/fuel1.jpeg");
@@ -159,23 +143,27 @@ header {
 
 header h1 {
 
-    font-size: var(--header-title-size);
+    font-size: 80px;
 
     margin-bottom: 15px;
 
     color: white;
 
     line-height: 1.1;
+
+    max-width: 100%;
 }
 
 
 header p {
 
-    font-size: var(--header-text-size);
+    font-size: 30px;
 
     color: white;
 
     line-height: 1.4;
+
+    max-width: 100%;
 }
 
 
@@ -193,15 +181,13 @@ button {
 
     padding: 16px 35px;
 
-    border-radius: var(--button-radius);
+    border-radius: 40px;
 
     font-size: 18px;
 
     cursor: pointer;
 
     transition: 0.3s;
-
-    align-content: center;
 }
 
 
@@ -212,10 +198,6 @@ button:hover {
     transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   BUTTON CONTAINER
-========================================================= */
 
 .button-container {
 
@@ -241,7 +223,7 @@ button:hover {
 
 .hero h2 {
 
-    font-size: var(--hero-title-size);
+    font-size: 38px;
 
     margin-bottom: 20px;
 
@@ -251,7 +233,7 @@ button:hover {
 
 .hero p {
 
-    font-size: var(--hero-text-size);
+    font-size: 20px;
 
     color: var(--text-light);
 
@@ -269,21 +251,22 @@ section {
 
     background: var(--card-background);
 
-    width: var(--page-width-percent);
+    width: 90%;
 
     max-width: var(--page-width);
 
-    margin: var(--section-margin) auto;
+    margin: 40px auto;
 
-    padding: var(--section-padding);
+    padding: 50px;
 
-    border-radius: var(--section-radius);
+    border-radius: 20px;
 
-    box-shadow: var(--section-shadow);
+    box-shadow:
+        0px 10px 25px var(--shadow);
 
     box-sizing: border-box;
 
-    overflow-wrap: break-word;
+    overflow: hidden;
 }
 
 
@@ -293,7 +276,7 @@ section h2 {
 
     margin-bottom: 20px;
 
-    font-size: var(--section-title-size);
+    font-size: 32px;
 
     line-height: 1.2;
 }
@@ -301,11 +284,11 @@ section h2 {
 
 section p {
 
-    font-size: var(--body-font-size);
+    font-size: 18px;
 
     margin-bottom: 15px;
 
-    line-height: var(--line-height);
+    line-height: 1.8;
 }
 
 
@@ -313,7 +296,7 @@ ul {
 
     padding-left: 25px;
 
-    font-size: var(--body-font-size);
+    font-size: 18px;
 }
 
 
@@ -331,13 +314,13 @@ section img {
 
     display: block;
 
-    width: var(--section-image-width);
-
-    height: auto;
+    width: 90%;
 
     max-width: 100%;
 
-    object-fit: cover;
+    height: auto;
+
+    object-fit: contain;
 
     margin: 0 auto;
 }
@@ -345,7 +328,6 @@ section img {
 
 /* =========================================================
    TABLET
-   481px - 768px
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -356,23 +338,27 @@ section img {
 
     header {
 
-        height: 340px;
+        height: 350px;
 
         padding: 50px 30px;
+
+        background-position: center;
     }
 
 
     header h1 {
 
-        font-size: 3.5rem;
+        font-size: 55px;
 
         line-height: 1.1;
+
+        margin-bottom: 15px;
     }
 
 
     header p {
 
-        font-size: 1.4rem;
+        font-size: 22px;
 
         line-height: 1.4;
     }
@@ -386,25 +372,19 @@ section img {
 
         width: 92%;
 
-        padding: 50px 30px;
+        padding: 50px 25px;
     }
 
 
     .hero h2 {
 
-        font-size: 2rem;
-
-        line-height: 1.25;
+        font-size: 32px;
     }
 
 
     .hero p {
 
-        font-size: 1.1rem;
-
-        line-height: 1.6;
-
-        margin-bottom: 30px;
+        font-size: 18px;
     }
 
 
@@ -422,15 +402,13 @@ section img {
 
     section h2 {
 
-        font-size: 1.9rem;
+        font-size: 28px;
     }
 
 
     section p {
 
-        font-size: 1.05rem;
-
-        line-height: 1.7;
+        font-size: 17px;
     }
 
 
@@ -443,26 +421,17 @@ section img {
         width: 100%;
 
         height: auto;
+
+        object-fit: contain;
     }
 }
 
 
 /* =========================================================
    PHONE
-   480px and below
 ========================================================= */
 
 @media (max-width: 480px) {
-
-    /* ===========================
-       General
-    =========================== */
-
-    body {
-
-        line-height: 1.6;
-    }
-
 
     /* ===========================
        Header
@@ -472,19 +441,27 @@ section img {
 
         height: 300px;
 
-        padding: 35px 18px;
+        padding: 35px 15px;
 
-        background-position: center;
+        background-position: center center;
     }
 
 
     header h1 {
 
-        font-size: 2.3rem;
+        /*
+           Keep the title large enough to
+           look like the desktop version,
+           but prevent overflow.
+        */
+
+        font-size: 34px;
 
         line-height: 1.15;
 
         margin-bottom: 12px;
+
+        width: 100%;
 
         max-width: 100%;
     }
@@ -492,9 +469,11 @@ section img {
 
     header p {
 
-        font-size: 1rem;
+        font-size: 17px;
 
         line-height: 1.4;
+
+        width: 100%;
 
         max-width: 100%;
     }
@@ -508,13 +487,13 @@ section img {
 
         width: calc(100% - 24px);
 
-        padding: 35px 20px;
+        padding: 35px 18px;
     }
 
 
     .hero h2 {
 
-        font-size: 1.7rem;
+        font-size: 27px;
 
         line-height: 1.25;
 
@@ -524,7 +503,7 @@ section img {
 
     .hero p {
 
-        font-size: 1rem;
+        font-size: 17px;
 
         line-height: 1.6;
 
@@ -533,7 +512,7 @@ section img {
 
 
     /* ===========================
-       Content Sections
+       Sections
     =========================== */
 
     section {
@@ -542,15 +521,17 @@ section img {
 
         margin: 20px auto;
 
-        padding: 25px 20px;
+        padding: 25px 18px;
 
         border-radius: 15px;
+
+        overflow: hidden;
     }
 
 
     section h2 {
 
-        font-size: 1.55rem;
+        font-size: 25px;
 
         line-height: 1.25;
 
@@ -560,7 +541,7 @@ section img {
 
     section p {
 
-        font-size: 1rem;
+        font-size: 16px;
 
         line-height: 1.7;
 
@@ -576,7 +557,7 @@ section img {
 
         padding-left: 22px;
 
-        font-size: 1rem;
+        font-size: 16px;
     }
 
 
@@ -596,7 +577,7 @@ section img {
 
         padding: 13px 22px;
 
-        font-size: 1rem;
+        font-size: 16px;
     }
 
 
@@ -618,10 +599,12 @@ section img {
 
         width: 100%;
 
-        height: auto;
-
         max-width: 100%;
 
-        margin: 0 auto;
+        height: auto;
+
+        object-fit: contain;
+
+        margin: 20px auto 0;
     }
 }
