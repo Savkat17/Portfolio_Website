@@ -1,110 +1,647 @@
-/* Theme Colours */
+/* =========================================================
+   HISTORIC LIVESTOCK PRICES
+   Responsive CSS
+   Original Desktop Look Preserved
+========================================================= */
+
+
+/* =========================================================
+   DESIGN VARIABLES
+========================================================= */
+
 :root {
+
+    /* ===========================
+       Theme Colours
+    =========================== */
+
     --primary: black;
-    --secondary: rgb(69,69,69);
-    --accent: rgb(98.98.98);
+    --secondary: rgb(69, 69, 69);
+    --accent: rgb(98, 98, 98);
+
     --background: #f6f8f5;
     --card-background: #ffffff;
+
     --text-dark: #333333;
     --text-light: #666666;
-    --shadow: rgba(0,0,0,0.08);
+
+    --shadow: rgba(0, 0, 0, 0.08);
+
+
+    /* ===========================
+       Page Layout
+    =========================== */
+
+    --page-width: 1100px;
+    --page-width-percent: 90%;
+
+    --section-margin: clamp(25px, 4vw, 40px);
+
+    --section-padding: clamp(25px, 4vw, 50px);
+
+
+    /* ===========================
+       Spacing
+    =========================== */
+
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
+
+
+    /* ===========================
+       Typography
+    =========================== */
+
+    --font-family:
+        Arial, Helvetica, sans-serif;
+
+    --body-font-size:
+        clamp(1rem, 1.6vw, 1.125rem);
+
+    --header-title-size:
+        clamp(2.5rem, 6vw, 5rem);
+
+    --header-text-size:
+        clamp(1.1rem, 2.5vw, 1.875rem);
+
+    --section-title-size:
+        clamp(1.6rem, 3.5vw, 2rem);
+
+    --hero-title-size:
+        clamp(1.8rem, 4vw, 2.375rem);
+
+    --hero-text-size:
+        clamp(1rem, 2vw, 1.25rem);
+
+    --line-height: 1.8;
+
+    --heading-line-height: 1.2;
+
+
+    /* ===========================
+       Header
+    =========================== */
+
+    --header-height: 400px;
+
+    --header-padding-y: 80px;
+
+    --header-padding-x: 20px;
+
+
+    /* ===========================
+       Hero
+    =========================== */
+
+    --hero-width: 900px;
+
+    --hero-padding-y: 70px;
+
+    --hero-padding-x: 30px;
+
+
+    /* ===========================
+       Border Radius
+    =========================== */
+
+    --section-radius: 20px;
+
+    --button-radius: 40px;
+
+
+    /* ===========================
+       Shadows
+    =========================== */
+
+    --section-shadow:
+        0px 10px 25px var(--shadow);
+
+
+    /* ===========================
+       Images
+    =========================== */
+
+    --section-image-width: 90%;
+
 }
 
-/* General page styling */
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: var(--font-family);
+
     background: var(--background);
+
     color: var(--text-dark);
-    line-height: 1.8;
+
+    line-height: var(--line-height);
+
+    overflow-x: hidden;
 }
 
-/* Header */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 header {
+
     width: 100%;
-    height: 400px;
-    background-image: url("../images/cattle1.jpg");
+
+    height: var(--header-height);
+
+    background-image:
+        url("../images/cattle1.jpg");
+
     background-size: cover;
+
     background-position: center;
+
     background-repeat: no-repeat;
+
     text-align: center;
-    padding: 80px 20px;
-}
-header h1{
-    font-size: 80px;
-    margin-bottom: 15px;
-    color: black;
-}
-header p{
-    font-size: 30px;
-    color: white;
+
+    padding:
+        var(--header-padding-y)
+        var(--header-padding-x);
 }
 
-/* Button */
-button{
-    background: var(--secondary);
-    color: white;
-    border: none;
-    padding: 16px 35px;
-    border-radius: 40px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
+
+header h1 {
+
+    font-size: var(--header-title-size);
+
+    margin-bottom: 15px;
+
+    color: black;
+
+    line-height: var(--heading-line-height);
 }
-button.hover{
+
+
+header p {
+
+    font-size: var(--header-text-size);
+
+    color: white;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+button {
+
+    background: var(--secondary);
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 35px;
+
+    border-radius: var(--button-radius);
+
+    font-size:
+        clamp(1rem, 2vw, 1.125rem);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    max-width: 100%;
+}
+
+
+button:hover {
+
     background: var(--primary);
+
     transform: translateY(-3px);
 }
 
-/* Hero */
-.hero{
-    max-width: 900px;
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    max-width: var(--hero-width);
+
     margin: auto;
+
     text-align: center;
-    padding: 70px 30px;
-}
-.hero h2{
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-.hero p{
-    font-size: 20px;
-    color: var(--text-light);
-    margin-bottom: 40px;
+
+    padding:
+        var(--hero-padding-y)
+        var(--hero-padding-x);
 }
 
-/* Content Sections */
-section{
+
+.hero h2 {
+
+    font-size: var(--hero-title-size);
+
+    margin-bottom: var(--spacing-medium);
+
+    line-height: var(--heading-line-height);
+}
+
+
+.hero p {
+
+    font-size: var(--hero-text-size);
+
+    color: var(--text-light);
+
+    margin-bottom: var(--spacing-large);
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+section {
+
     background: var(--card-background);
-    width: 90%;
-    margin: 40px auto;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 25px var(--shadow);
+
+    width: var(--page-width-percent);
+
+    max-width: var(--page-width);
+
+    margin:
+        var(--section-margin)
+        auto;
+
+    padding: var(--section-padding);
+
+    border-radius: var(--section-radius);
+
+    box-shadow: var(--section-shadow);
+
     box-sizing: border-box;
 }
-section h2{
+
+
+section h2 {
+
     color: var(--primary);
-    margin-bottom: 20px;
-    font-size: 32px;
+
+    margin-bottom: var(--spacing-medium);
+
+    font-size: var(--section-title-size);
+
+    line-height: var(--heading-line-height);
 }
-section p{
-    font-size: 18px;
+
+
+section p {
+
+    font-size: var(--body-font-size);
+
     margin-bottom: 15px;
+
+    overflow-wrap: break-word;
 }
-ul{
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+ul {
+
     padding-left: 25px;
-    font-size: 18px;
+
+    font-size: var(--body-font-size);
 }
-li{
+
+
+li {
+
     margin-bottom: 12px;
 }
-section img{
-    width: 90%;
-    height: 100%;
-    object-fit: cover;
+
+
+/* =========================================================
+   SECTION IMAGES
+========================================================= */
+
+section img {
+
+    display: block;
+
+    width: var(--section-image-width);
+
+    height: auto;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   769px → 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ===========================
+       Header
+    =========================== */
+
+    header {
+
+        height: 330px;
+
+        padding: 65px 20px;
+    }
+
+
+    header h1 {
+
+        font-size: 3.2rem;
+    }
+
+
+    header p {
+
+        font-size: 1.4rem;
+    }
+
+
+    /* ===========================
+       Hero
+    =========================== */
+
+    .hero {
+
+        width: 92%;
+
+        padding: 50px 25px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 2rem;
+    }
+
+
+    .hero p {
+
+        font-size: 1.05rem;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ===========================
+       Sections
+    =========================== */
+
+    section {
+
+        width: 92%;
+
+        padding: 35px;
+    }
+
+
+    section h2 {
+
+        font-size: 1.8rem;
+    }
+
+
+    section p {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* ===========================
+       Images
+    =========================== */
+
+    section img {
+
+        width: 100%;
+
+        height: auto;
+    }
+
+
+    /* ===========================
+       Lists
+    =========================== */
+
+    ul {
+
+        font-size: 1rem;
+
+        padding-left: 22px;
+    }
+
+
+    li {
+
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   PHONE RESPONSIVENESS
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* ===========================
+       General
+    =========================== */
+
+    body {
+
+        line-height: 1.65;
+    }
+
+
+    /* ===========================
+       Header
+    =========================== */
+
+    header {
+
+        height: 270px;
+
+        padding: 45px 15px;
+
+        background-position: center;
+    }
+
+
+    header h1 {
+
+        font-size: 2.1rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 12px;
+    }
+
+
+    header p {
+
+        font-size: 1rem;
+
+        line-height: 1.4;
+    }
+
+
+    /* ===========================
+       Hero
+    =========================== */
+
+    .hero {
+
+        width: calc(100% - 24px);
+
+        padding: 35px 18px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 1.65rem;
+
+        line-height: 1.25;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero p {
+
+        font-size: 1rem;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ===========================
+       Content Sections
+    =========================== */
+
+    section {
+
+        width: calc(100% - 24px);
+
+        margin: 20px auto;
+
+        padding: 22px 18px;
+
+        border-radius: 15px;
+    }
+
+
+    section h2 {
+
+        font-size: 1.5rem;
+
+        line-height: 1.25;
+
+        margin-bottom: 15px;
+    }
+
+
+    section p {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 14px;
+    }
+
+
+    /* ===========================
+       Lists
+    =========================== */
+
+    ul {
+
+        font-size: 1rem;
+
+        padding-left: 20px;
+    }
+
+
+    li {
+
+        margin-bottom: 9px;
+    }
+
+
+    /* ===========================
+       Images
+    =========================== */
+
+    section img {
+
+        width: 100%;
+
+        height: auto;
+
+        max-width: 100%;
+    }
+
+
+    /* ===========================
+       Buttons
+    =========================== */
+
+    button {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 14px 20px;
+
+        font-size: 1rem;
+    }
+
 }
