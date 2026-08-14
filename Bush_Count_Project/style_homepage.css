@@ -56,6 +56,23 @@ header p{
     opacity:0.9;
 }
 
+header .button {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+header .button:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
 
 /* ===========================
    Hero
