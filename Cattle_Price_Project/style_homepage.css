@@ -145,7 +145,7 @@ body {
 
 
 /* =========================================================
-   HERO WITH SIDE IMAGES
+   HERO WITH LEFT AND RIGHT IMAGES
 ========================================================= */
 
 .hero-wrapper {
@@ -160,21 +160,13 @@ body {
 
     margin: 40px auto;
 
-    min-height: var(--hero-min-height);
+    min-height: 350px;
 }
 
 
-.hero-image-container {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
-}
-
+/* ===========================
+   Hero Images
+=========================== */
 
 .hero-image {
 
@@ -183,16 +175,22 @@ body {
     height: 100%;
 
     object-fit: cover;
+
+    display: block;
 }
 
+
+/* ===========================
+   Centre Hero
+=========================== */
 
 .hero {
 
     background: var(--card-background);
 
-    border-radius: var(--hero-radius);
+    border-radius: 20px;
 
-    padding: var(--hero-padding);
+    padding: 50px;
 
     display: flex;
 
@@ -226,33 +224,11 @@ body {
     margin-bottom: 40px;
 }
 
-
 /* =========================================================
-   TABLET RESPONSIVENESS
+   TABLET
 ========================================================= */
 
 @media (max-width: 768px) {
-
-    header {
-
-        padding: 60px 20px;
-    }
-
-    header h1 {
-
-        font-size: 42px;
-    }
-
-
-    section {
-
-        width: 92%;
-
-        padding: 30px;
-    }
-
-
-    /* Keep the three-column hero */
 
     .hero-wrapper {
 
@@ -262,96 +238,42 @@ body {
             20%;
 
         min-height: 300px;
+
+        margin: 30px auto;
     }
 
 
     .hero {
 
-        padding: 35px 20px;
+        padding: 30px 20px;
     }
 
 
     .hero h2 {
 
         font-size: 30px;
+
+        line-height: 1.25;
     }
 
 
     .hero p {
 
-        font-size: 17px;
+        font-size: 16px;
+
+        line-height: 1.6;
 
         margin-bottom: 25px;
-    }
-
-
-    .hero-image {
-
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: cover;
     }
 
 }
 
 
 /* =========================================================
-   PHONE RESPONSIVENESS
+   PHONE
 ========================================================= */
 
 @media (max-width: 480px) {
-
-    header {
-
-        padding: 45px 20px;
-    }
-
-
-    header h1 {
-
-        font-size: 34px;
-
-        line-height: 1.2;
-    }
-
-
-    header p {
-
-        font-size: 17px;
-    }
-
-
-    section {
-
-        width: calc(100% - 24px);
-
-        margin: 20px auto;
-
-        padding: 22px 18px;
-
-        border-radius: 15px;
-    }
-
-
-    section h2 {
-
-        font-size: 26px;
-
-        line-height: 1.25;
-    }
-
-
-    section p {
-
-        font-size: 16px;
-
-        line-height: 1.7;
-    }
-
-
-    /* Keep images LEFT and RIGHT */
 
     .hero-wrapper {
 
@@ -360,7 +282,7 @@ body {
             70%
             15%;
 
-        min-height: 250px;
+        min-height: 260px;
 
         margin: 20px auto;
     }
@@ -376,9 +298,9 @@ body {
 
     .hero h2 {
 
-        font-size: 24px;
+        font-size: 22px;
 
-        line-height: 1.2;
+        line-height: 1.25;
 
         margin-bottom: 12px;
     }
@@ -386,21 +308,23 @@ body {
 
     .hero p {
 
-        font-size: 14px;
+        font-size: 13px;
 
         line-height: 1.5;
 
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
 
-    .hero-image-container {
-
-        display: flex;
+    .hero .button {
 
         width: 100%;
 
-        height: 100%;
+        padding: 11px 6px;
+
+        font-size: 12px;
+
+        text-align: center;
     }
 
 
@@ -413,85 +337,6 @@ body {
         object-fit: cover;
     }
 
-
-    .button {
-
-        display: block;
-
-        width: 100%;
-
-        text-align: center;
-
-        padding: 12px 8px;
-
-        font-size: 14px;
-    }
-
-
-    section img {
-
-        width: 100%;
-
-        height: auto;
-    }
-
-
-    footer {
-
-        padding: 30px 15px;
-
-        font-size: 14px;
-    }
-
-}
-
-/* =========================================================
-   HERO
-   Original appearance preserved
-========================================================= */
-
-.hero {
-
-    max-width: var(--hero-width);
-
-    margin: auto;
-
-    text-align: center;
-
-    padding: 70px 30px;
-
-    background: var(--card-background);
-
-    border-radius: var(--hero-radius);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    box-shadow:
-        0px 10px 25px var(--shadow);
-}
-
-
-.hero h2 {
-
-    font-size: var(--hero-title-size);
-
-    margin-bottom: 20px;
-}
-
-
-.hero p {
-
-    font-size: var(--hero-text-size);
-
-    color: var(--text-dark);
-
-    margin-bottom: 40px;
 }
 
 
