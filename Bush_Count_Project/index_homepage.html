@@ -166,7 +166,28 @@
             </div>
         </div>
     </section>
+    <!-- Live Counting App-->
+    <section>
+        <h2>Live Bush Counting Application</h2>
+        <p>
+            This application uses computer vision and image-processing techniques to automatically 
+            estimate the number of bushes present in aerial imagery. Users can upload an image of 
+            their choice, which is then processed using two independent bush-counting approaches.
+        </p>
+        <h3>RBG Analysis</h3>
+        <p>The first approach classifies vegetation based on RGB colour information and identifies connected vegetation regions to estimate individual bush counts.</p>
 
+        <h3>Density Smoothing and Local Maxima Detection</h3>
+        <p>The second approach converts the image into a vegetation-density representation, applies density smoothing, and identifies local maxima to estimate the number of individual bushes.</p>
+
+        <p>The results from both approaches are then combined using a weighted average bush count. The weighting is based on the confidence of each method, calculated from three image-based metrics ranging between 0 and 1, with 1 showing better confidence:</p>
+        <ul>
+            <li>• Circularity - measures how closely detected bush regions resemble compact, circular objects.</li>
+            <li>• Size Uniformity - evaluates the consistency of detected bush sizes.</li>
+            <li>• Bush-Soil Contrast - measures how clearly bushes can be distinguished from surrounding soil.</li>
+        </ul>
+        <p>This allows the application to use the strengths of both counting approaches while reducing reliance on a single image-processing method.</p>
+    </section>
     <!-- Future Work -->
     <section>
         <h2>Future Improvements</h2>
