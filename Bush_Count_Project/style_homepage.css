@@ -394,27 +394,32 @@ li {
 
 .pipeline-grid {
 
-    display: flex;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
 
     align-items: center;
-
-    justify-content: center;
 
     gap: clamp(6px, 1.5vw, 20px);
 
     margin-top: 40px;
 
     width: 100%;
-
-    flex-wrap: nowrap;
 }
 
 
 .pipeline-item {
 
     text-align: center;
-
-    flex: 1 1 0;
 
     min-width: 0;
 }
@@ -434,6 +439,10 @@ li {
 
     box-shadow:
         0px 8px 20px rgba(0,0,0,0.15);
+
+    display: block;
+
+    margin: 0 auto;
 }
 
 
@@ -449,14 +458,15 @@ li {
 
 .pipeline-arrow {
 
-    flex: 0 0 auto;
-
     font-size: clamp(20px, 3vw, 45px);
 
     color: var(--accent);
 
     text-align: center;
+
+    white-space: nowrap;
 }
+
 
 /* =========================================================
    HERO WITH SIDE IMAGES
