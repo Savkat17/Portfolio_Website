@@ -335,6 +335,12 @@ section {
         0px 10px 25px var(--shadow);
 
     box-sizing: border-box;
+
+    /*
+       Prevent content from forcing the
+       section wider than the screen.
+    */
+    overflow: hidden;
 }
 
 
@@ -385,6 +391,63 @@ ul {
 li {
 
     margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION IMAGES
+========================================================= */
+
+/*
+   This applies to images placed directly inside
+   your normal <section> elements.
+
+   The image:
+   - stays inside the section
+   - keeps its original proportions
+   - is horizontally centred
+   - scales down on smaller screens
+   - does not become unnecessarily huge
+*/
+
+section > img {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 550px;
+
+    margin: 30px auto;
+
+    object-fit: contain;
+}
+
+
+/*
+   Images inside paragraphs should also remain
+   within the section.
+*/
+
+section p img {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 550px;
+
+    margin: 30px auto;
+
+    object-fit: contain;
 }
 
 
@@ -506,15 +569,54 @@ li {
     display: block;
 }
 
+
 /* =========================================================
-   SECTION IMAGES
+   SECTION-SPECIFIC IMAGES
 ========================================================= */
+
+/*
+   Bush counter application images.
+*/
+
 .bush-counter-app img {
-   width: 100%;
-   max-width: 100%;
-   height: auto;
-   object-fit: contain;
+
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 550px;
+
+    object-fit: contain;
+
+    margin: 30px auto;
 }
+
+
+/* =========================================================
+   SPECTRAL EXPLANATION IMAGES
+========================================================= */
+
+.spectral-explanation img {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 550px;
+
+    object-fit: contain;
+
+    margin: 30px auto;
+}
+
 
 /* =========================================================
    FOOTER
@@ -562,6 +664,19 @@ footer {
         width: 92%;
 
         padding: 40px;
+    }
+
+
+    /*
+       Images scale with the section.
+    */
+
+    section > img,
+    section p img,
+    .bush-counter-app img,
+    .spectral-explanation img {
+
+        max-height: 500px;
     }
 
 
@@ -666,6 +781,22 @@ footer {
     section p {
 
         font-size: 17px;
+    }
+
+
+    /*
+       Smaller maximum image height
+       for tablets.
+    */
+
+    section > img,
+    section p img,
+    .bush-counter-app img,
+    .spectral-explanation img {
+
+        max-height: 400px;
+
+        margin: 25px auto;
     }
 
 
@@ -846,6 +977,30 @@ footer {
     }
 
 
+    /*
+       Images fit comfortably inside
+       the phone-sized section.
+    */
+
+    section > img,
+    section p img,
+    .bush-counter-app img,
+    .spectral-explanation img {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+
+        max-height: 300px;
+
+        object-fit: contain;
+
+        margin: 20px auto;
+    }
+
+
     /* ===========================
        Hero
     =========================== */
@@ -990,3 +1145,4 @@ footer {
     }
 
 }
+
