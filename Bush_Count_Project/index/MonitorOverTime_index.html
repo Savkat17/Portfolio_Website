@@ -101,175 +101,148 @@
             </ul>
             <img src="../images/IMG-0727.png">
         </section>
-        <section>
-            <h2>Spectral Band Selection</h2>
-            <p>
-                The selection of spectral bands is an important component of the bush-counting and vegetation-monitoring approach, as 
-                different wavelengths provide different information about vegetation and the surrounding landscape. For this project, **RGB, 
-                Near-Infrared (NIR), and Short-Wave Infrared (SWIR)** information is used to capture complementary characteristics of 
-                vegetation, soil and woody structures.
+        
+        <!-- Spectral Band Selection --> 
+        <section> 
+            <h2>Spectral Band Selection</h2> 
+            <p> 
+                The selection of spectral bands is an important component of the bush-counting and vegetation-monitoring approach, as different wavelengths provide different information about vegetation and the 
+                surrounding landscape. For this project, <strong>RGB, Near-Infrared (NIR), and Short-Wave Infrared (SWIR)</strong> information is used to capture complementary characteristics of vegetation, soil 
+                and woody structures. 
+            </p> 
+            <!-- RGB --> 
+            <h3>RGB - Visible Vegetation Characteristics</h3> 
+            <p> 
+                The <strong>Red, Green and Blue (RGB)</strong> bands represent the visible portion of the electromagnetic spectrum and provide information similar to what is observed by the human eye. These bands are 
+                particularly useful for distinguishing vegetation from exposed soil and other background features based on differences in colour and brightness. 
+            </p> 
+            <p> 
+                For the bush-counting component of the project, RGB information is useful for identifying the visible structure and boundaries of individual bushes, particularly when high-resolution imagery is available. 
+                It can also provide information about differences between green vegetation, dry vegetation, soil and other surface features. The RGB bands therefore provide an intuitive representation of the landscape and 
+                form an important basis for identifying and characterising individual bush objects. 
             </p>
-            <h3>RGB - Visible Vegetation Characteristics</h3>
-            <p>
-                The **Red, Green and Blue (RGB)** bands represent the visible portion of the electromagnetic spectrum and provide 
-                information similar to what is observed by the human eye. These bands are particularly useful for distinguishing vegetation 
-                from exposed soil and other background features based on differences in colour and brightness.
-            </p>
-            <p>
-                For the bush-counting component of the project, RGB information is useful for identifying the visible structure and 
-                boundaries of individual bushes, particularly when high-resolution imagery is available. It can also provide information 
-                about differences between green vegetation, dry vegetation, soil and other surface features. The RGB bands therefore 
-                provide an intuitive representation of the landscape and form an important basis for identifying and characterising 
-                individual bush objects.
-            </p>
-            <h3>NIR - Vegetation Structure and Health</h3>
-            <p>
-                The **Near-Infrared (NIR)** region provides information that is particularly valuable for vegetation analysis. Healthy green 
-                vegetation strongly reflects NIR radiation because of the internal structure of plant leaves, while vegetation with different 
-                levels of stress, senescence or moisture can exhibit different spectral responses.
-            </p>
-            <p>
-                NIR is therefore useful for separating vegetation from non-vegetated surfaces and for assessing differences in vegetation 
-                condition. In this project, NIR can complement the RGB information by providing an additional means of distinguishing 
-                vegetation from soil and identifying areas with greater or lower vegetation activity. It also forms the basis of widely 
-                used vegetation indices, such as the **Normalized Difference Vegetation Index (NDVI)**, which can be used to monitor changes 
-                in vegetation conditions over time.
-            </p>
-            <h3>SWIR - Moisture and Vegetation Condition</h3>
-            <p>
-                The **Short-Wave Infrared (SWIR)** region provides information that is complementary to both visible and NIR wavelengths. 
-                SWIR reflectance is strongly influenced by the water content of vegetation and soil, making it useful for distinguishing 
-                surfaces with different moisture characteristics.
-            </p>
-            <p>
-                This is particularly relevant in rangeland environments, where vegetation condition can vary substantially according to 
-                rainfall, season and moisture availability. SWIR can help distinguish vegetation from dry soil and other background surfaces 
-                and can provide additional information about vegetation stress and moisture conditions. Including SWIR therefore allows the 
-                project to capture characteristics of the landscape that may not be apparent from RGB or NIR information alone.
-            </p>
-            <h3>Why Combine the Bands?</h3>
-            <p>
-                The main advantage of combining **RGB, NIR and SWIR** is that each spectral region provides different information about the 
-                landscape. RGB describes the visible appearance and structure of vegetation, NIR provides strong information about vegetation 
-                presence and condition, while SWIR contributes information related to vegetation and soil moisture.
-            </p>
-            <p>
-                Together, these spectral regions provide a more comprehensive representation of the landscape than any individual band 
-                could provide on its own. This is particularly important for bush monitoring, where the objective is not simply to identify 
-                vegetation, but to distinguish bushes from surrounding vegetation and soil and to monitor how these characteristics change 
-                over time.
-            </p>
-            <p>
-                By combining spectral information with spatial image analysis and the bush-counting methodology developed in this project, 
-                the aim is to develop a more robust approach for identifying and monitoring woody vegetation. The combination of **visible, 
-                NIR and SWIR information** can therefore support both the identification of individual bushes and the longer-term assessment 
-                of vegetation and bush encroachment across the study area.
-            </p>
-        </section>
+            <!-- NIR --> 
+            <h3>NIR - Vegetation Structure and Health</h3> 
+            <p> 
+                The <strong>Near-Infrared (NIR)</strong> region provides information that is particularly valuable for vegetation analysis. Healthy green vegetation strongly reflects NIR radiation because of the 
+                internal structure of plant leaves, while vegetation with different levels of stress, senescence or moisture can exhibit different spectral responses. 
+            </p> 
+            <p> 
+                NIR is therefore useful for separating vegetation from non-vegetated surfaces and for assessing differences in vegetation condition. In this project, NIR can complement the RGB information by providing 
+                an additional means of distinguishing vegetation from soil and identifying areas with greater or lower vegetation activity. It also forms the basis of widely used vegetation indices, such as 
+                the <strong>Normalized Difference Vegetation Index (NDVI)</strong>, which can be used to monitor changes in vegetation conditions over time. 
+            </p> 
+            <!-- SWIR --> 
+            <h3>SWIR - Moisture and Vegetation Condition</h3> 
+            <p> 
+                The <strong>Short-Wave Infrared (SWIR)</strong> region provides information that is complementary to both visible and NIR wavelengths. SWIR reflectance is strongly influenced by the water content of 
+                vegetation and soil, making it useful for distinguishing surfaces with different moisture characteristics. 
+            </p> 
+            <p> 
+                This is particularly relevant in rangeland environments, where vegetation condition can vary substantially according to rainfall, season and moisture availability. SWIR can help distinguish vegetation 
+                from dry soil and other background surfaces and can provide additional information about vegetation stress and moisture conditions. Including SWIR therefore allows the project to capture 
+                characteristics of the landscape that may not be apparent from RGB or NIR information alone. 
+            </p> 
+            <!-- Combination --> 
+            <h3>Why Combine the Bands?</h3> 
+            <p> 
+                The main advantage of combining <strong>RGB, NIR and SWIR</strong> is that each spectral region provides different information about the landscape. RGB describes the visible appearance and structure 
+                of vegetation, NIR provides strong information about vegetation presence and condition, while SWIR contributes information related to vegetation and soil moisture. 
+            </p> 
+            <p> 
+                Together, these spectral regions provide a more comprehensive representation of the landscape than any individual band could provide on its own. This is particularly important for bush monitoring, 
+                where the objective is not simply to identify vegetation, but to distinguish bushes from surrounding vegetation and soil and to monitor how these characteristics change over time. 
+            </p> 
+            <p> 
+                By combining spectral information with spatial image analysis and the bush-counting methodology developed in this project, the aim is to develop a more robust approach for identifying and monitoring 
+                woody vegetation. The combination of <strong>visible, NIR and SWIR information</strong> can therefore support both the identification of individual bushes and the longer-term assessment of vegetation 
+                and bush encroachment across the study area. 
+            </p> 
+        </section> 
         
-        <section class="spectral-explanation">
-        <h2>Why NIR and SWIR Are Useful for Plant Classification</h2>
-        <p>
-            Plants interact with electromagnetic radiation differently from soil,
-            rocks and other land-cover types. While visible RGB imagery captures
-            differences in colour, <strong>Near-Infrared (NIR)</strong> and
-            <strong>Short-Wave Infrared (SWIR)</strong> provide additional
-            information about the internal structure and physical properties of
-            vegetation. This makes these spectral regions particularly useful for
-            recognising and classifying plants.
-        </p>
-        
-        <h3>Near-Infrared (NIR)</h3>
-        
-        <p>
-            Healthy vegetation absorbs a large proportion of visible red light
-            because of chlorophyll, which is required for photosynthesis. However,
-            vegetation strongly reflects <strong>NIR radiation</strong>. This high
-            NIR reflectance is largely caused by the internal structure of plant
-            leaves, where the cellular structure scatters incoming NIR radiation.
-        </p>
-        
-        <p>
-            As a result, vegetation generally has a very different spectral
-            response in the NIR region compared with soil, water and many other
-            land-cover types. This difference makes NIR particularly effective for
-            separating vegetation from non-vegetated surfaces.
-        </p>
-        
-        <p>
-            NIR can also provide information about vegetation structure and
-            condition. Differences in leaf density, canopy structure and vegetation
-            health can result in differences in NIR reflectance. This makes NIR
-            useful not only for identifying vegetation, but also for distinguishing
-            areas with different vegetation characteristics.
-        </p>
-        
-        <div class="spectral-highlight">
-            <strong>In this project:</strong>
-            NIR provides information that helps distinguish bushes and other
-            vegetation from surrounding soil and non-vegetated surfaces, while
-            also providing information about vegetation structure and condition.
-        </div>
-        
-        <h3>Short-Wave Infrared (SWIR)</h3>
-        
-        <p>
-            SWIR provides a different type of information from NIR. Reflectance in
-            the SWIR region is strongly influenced by the <strong>water content</strong>
-            of vegetation and soil, as well as the chemical and structural
-            characteristics of plant material.
-        </p>
-        
-        <p>
-            Water absorbs specific wavelengths of SWIR radiation. Consequently,
-            vegetation containing different amounts of water can produce different
-            SWIR reflectance responses. Healthy, moist vegetation can therefore
-            have a different spectral signature from dry or stressed vegetation.
-        </p>
-        
-        <p>
-            SWIR is also useful for distinguishing vegetation from dry soil and
-            other background surfaces. This is particularly important in
-            rangeland environments, where green vegetation, dry grass, woody
-            vegetation and exposed soil may occur next to one another and can
-            sometimes appear similar in visible imagery.
-        </p>
-        
-        <div class="spectral-highlight">
-            <strong>In this project:</strong>
-            SWIR provides additional information about vegetation moisture and
-            condition, helping to distinguish vegetation types and vegetation
-            from surrounding soil and dry material.
-        </div>
-        
-        <h3>Why Combine NIR and SWIR?</h3>
-        
-        <p>
-            NIR and SWIR are valuable because they describe different physical
-            characteristics of vegetation. <strong>NIR is particularly sensitive
-            to leaf and canopy structure</strong>, while <strong>SWIR is strongly
-            influenced by vegetation water content and plant material
-            characteristics</strong>.
-        </p>
-        
-        <p>
-            Combining these spectral regions therefore provides a more complete
-            representation of vegetation than using visible RGB information alone.
-            Two surfaces that have similar colours in an RGB image may have very
-            different NIR or SWIR responses, allowing them to be separated during
-            classification.
-        </p>
-        
-        <p>
-            For the bush-counting project, this combination is particularly useful
-            because the objective is not simply to identify something that appears
-            green. The aim is to distinguish <strong>woody vegetation, other
-            vegetation and background surfaces</strong> using their different
-            spectral characteristics. By combining RGB, NIR and SWIR information,
-            the classification can use both the visible appearance of vegetation
-            and its underlying physical and structural properties.
-        </p>
-        
+        <!-- Why NIR and SWIR Work for Plant Classification --> 
+        <section class="spectral-explanation"> 
+            <h2>Why NIR and SWIR Are Useful for Plant Recognition and Classification</h2> 
+            <p> 
+                Plants are not simply identified by the colour that we see. Their interaction with electromagnetic radiation is determined by their <strong>chemical composition, water content and physical 
+                structure</strong>. These interactions produce characteristic patterns of absorption and reflection across different wavelengths, often referred to as a plant's <strong>spectral signature</strong>. 
+            </p> 
+            <p> 
+                This is what makes multispectral imagery useful for plant classification. Two surfaces may look very similar in an RGB image, but interact with infrared radiation very differently. By observing several 
+                parts of the electromagnetic spectrum simultaneously, it becomes possible to distinguish vegetation based on its underlying physical and chemical properties rather than colour alone. 
+            </p> 
+            <!-- Visible Light --> 
+            <h3>Visible Light: The Chemical Signature of Photosynthesis</h3> 
+            <p> 
+                The visible bands provide an important starting point because plant pigments interact strongly with visible radiation. <strong>Chlorophyll</strong>, the primary pigment responsible for photosynthesis, 
+                absorbs large amounts of blue and red light. The energy from this absorbed radiation is used in photosynthetic processes. 
+            </p> 
+            <p> 
+                Green light is absorbed less strongly and is therefore more strongly reflected and scattered back from the leaves. This is one of the main physical reasons why healthy vegetation appears green to the 
+                human eye. 
+            </p> 
+            <p> 
+                However, colour alone is not sufficient for reliable plant classification. Different vegetation types can have similar visible colours, while their internal structure, moisture content and chemical 
+                composition may be substantially different. This is where NIR and SWIR become particularly valuable. 
+            </p> 
+            <!-- NIR Physics --> 
+            <h3>Near-Infrared: Seeing the Structure of the Leaf</h3> 
+            <p> 
+                The Near-Infrared (NIR) region provides information that is fundamentally different from visible light. NIR is not strongly absorbed by chlorophyll. Instead, a large proportion of incoming NIR 
+                radiation interacts with the <strong>internal structure of the leaf</strong>. 
+            </p> 
+            <p> 
+                A leaf contains layers of cells and air spaces. When NIR radiation enters this complex cellular structure, differences in refractive index between cell walls, air spaces and other tissue cause the 
+                radiation to be repeatedly scattered. This produces the characteristically high NIR reflectance associated with healthy vegetation. 
+            </p> 
+            <p> 
+                The amount of NIR radiation reflected is therefore influenced by properties such as <strong>leaf structure, cell arrangement, leaf density and canopy structure</strong>. A dense, healthy canopy 
+                can produce a substantially different NIR response from sparse vegetation, bare soil or other land-cover types. 
+            </p> 
+            <p> 
+                This makes NIR particularly powerful for recognising vegetation. Instead of asking only <em>"What colour is this pixel?"</em>, NIR allows the classification process to ask <em>"Does this surface 
+                have the physical structure characteristic of vegetation?"</em> 
+            </p> 
+            <!-- SWIR Physics and Chemistry --> 
+            <h3>Short-Wave Infrared: Detecting Water and Plant Chemistry</h3> 
+            <p> 
+                SWIR provides another layer of information because radiation in this region interacts strongly with the <strong>chemical bonds and water molecules</strong> present within vegetation. 
+            </p> 
+            <p> 
+                Water absorbs electromagnetic radiation at specific SWIR wavelengths. Because leaves and other plant tissues contain substantial amounts of water, changes in vegetation moisture produce measurable 
+                changes in SWIR reflectance. Consequently, moist and healthy vegetation can have a different SWIR spectral response from dry or stressed vegetation. 
+            </p> 
+            <p> 
+                SWIR is also influenced by the chemical composition of plant material. Molecular bonds such as <strong>O–H, C–H and N–H</strong> interact with electromagnetic radiation at characteristic wavelengths. 
+                These interactions create absorption features in the SWIR region that are related to the composition of the material being observed. 
+            </p> 
+            <p> 
+                This is particularly useful when vegetation types have similar visible colours but differ in their physical or chemical composition. Woody material, green leaves, dry grass and exposed soil can therefore 
+                produce different SWIR responses even when their RGB appearance is relatively similar. 
+            </p> 
+            <!-- Classification --> 
+            <h3>From Spectral Response to Plant Classification</h3> 
+            <p> 
+                The important concept is that each spectral band provides a different piece of information about the material being observed: 
+            </p> 
+            <ul> 
+                <li> <strong>RGB</strong> describes how the surface interacts with visible light and provides information about colour and visible structure. </li> 
+                <li> <strong>NIR</strong> provides information about the internal cellular structure of leaves and the structure of vegetation canopies. </li> 
+                <li> <strong>SWIR</strong> provides information related to water content and the chemical composition of vegetation and other surface materials. </li> 
+            </ul> 
+            <p> 
+                These differences create a multidimensional <strong>spectral signature</strong> for each pixel. A classification algorithm can use the combination of these spectral responses to determine whether a 
+                pixel is more likely to represent woody vegetation, other vegetation, dry vegetation, soil or another surface type. 
+            </p> 
+            <p> 
+                For example, a green bush and green grass may have similar RGB colours. However, differences in canopy structure can produce different NIR responses, while differences in moisture and plant material 
+                can produce different SWIR responses. The combination of these signals therefore provides more information for classification than RGB alone. 
+            </p> 
+            <div class="spectral-highlight"> 
+                <strong>In this project:</strong> RGB provides the visible appearance of the landscape, NIR provides information about the physical structure of vegetation, and SWIR provides information related to 
+                water content and plant chemistry. Together, these spectral responses provide the information needed to move from simply detecting vegetation to <strong>recognising and classifying different vegetation 
+                types</strong>. 
+            </div> 
         </section>
 
     </body>
